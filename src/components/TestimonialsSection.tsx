@@ -72,6 +72,7 @@ export default function TestimonialsSection() {
               alt="Testimonial background"
               fill
               className="object-cover animate-in fade-in duration-700"
+              sizes="(max-width: 768px) 100vw, 70vw"
             />
           </div>
 

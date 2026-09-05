@@ -38,6 +38,7 @@ export default function Navbar() {
               alt={hotelDetails.name}
               width={220}
               height={80}
+              priority
               className={cn(
                 "h-14 md:h-16 w-auto object-contain transition-all duration-300",
                 scrolled ? "opacity-100" : "opacity-90 invert brightness-0"

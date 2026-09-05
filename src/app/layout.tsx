@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className={`min-h-screen flex flex-col font-sans antialiased text-foreground bg-background`} suppressHydrationWarning>
         <Navbar />
         <main className="flex-grow">
