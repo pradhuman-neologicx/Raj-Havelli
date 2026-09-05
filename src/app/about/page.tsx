@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import FaqAccordion from "@/components/FaqAccordion";
 import {
   BedDouble,
   Utensils,
@@ -65,12 +66,7 @@ const facilities = [
   { icon: Shield, name: "24/7 Security" },
 ];
 
-const guestLoveStats = [
-  { pct: "44%", label: "Excellent", desc: "Comfort & hospitality" },
-  { pct: "24%", label: "Good", desc: "Service & amenities" },
-  { pct: "17%", label: "Average", desc: "Room experience" },
-  { pct: "15%", label: "Below Expectations", desc: "Specific concerns" },
-];
+
 
 const nearbyLandmarks = [
   { name: "Junagarh Fort", distance: "10 min drive" },
@@ -380,74 +376,16 @@ export default function AboutPage() {
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="h-[1px] w-12 md:w-20 bg-primary/60" />
               <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">
-                Guest Feedback
+                Why Choose Us
               </p>
               <div className="h-[1px] w-12 md:w-20 bg-primary/60" />
             </div>
             <h2 className="text-3xl md:text-5xl font-serif text-primary mb-3">
-              What Guests Love About Us
+              Our Core Values
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              With an impressive rating and 59+ reviews, guests love our nice
-              rooms, cordial staff, courteous stay and delicious food.
+              Experience the finest hospitality with our dedicated services and prime location in the heart of Bikaner.
             </p>
-          </div>
-
-          {/* Rating Highlight */}
-          <div className="bg-card border border-border rounded-2xl shadow-lg p-8 md:p-10 mb-10">
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-              {/* Rating Circle */}
-              <div className="shrink-0 text-center">
-                <div className="w-28 h-28 rounded-full bg-primary flex items-center justify-center mx-auto shadow-lg">
-                  <div>
-                    <p className="text-3xl font-bold text-white">3.9</p>
-                    <p className="text-xs text-white/70">/5.0</p>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center gap-1 mt-3">
-                  {[1, 2, 3, 4].map((s) => (
-                    <Star
-                      key={s}
-                      className="w-4 h-4 fill-primary text-primary"
-                    />
-                  ))}
-                  <Star className="w-4 h-4 text-primary/30" />
-                </div>
-                <p className="text-xs text-muted-foreground mt-1">
-                  59 Reviews
-                </p>
-              </div>
-
-              {/* Stat Bars */}
-              <div className="flex-grow w-full space-y-4">
-                {guestLoveStats.map((s, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <span className="text-sm font-medium text-foreground w-16 shrink-0">
-                      {s.label}
-                    </span>
-                    <div className="flex-grow h-3 bg-muted rounded-full overflow-hidden">
-                      <div
-                        className="h-full rounded-full transition-all duration-700"
-                        style={{
-                          width: s.pct,
-                          background:
-                            i === 0
-                              ? "oklch(0.35 0.08 190)"
-                              : i === 1
-                                ? "oklch(0.45 0.08 190)"
-                                : i === 2
-                                  ? "oklch(0.6 0.06 85)"
-                                  : "oklch(0.75 0.04 85)",
-                        }}
-                      />
-                    </div>
-                    <span className="text-sm font-semibold text-foreground/70 w-10 text-right">
-                      {s.pct}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Love Highlights */}
@@ -611,44 +549,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ========== CTA ========== */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/Gallery/Galary .jpg"
-            alt="Raj Haveli Heritage"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-primary/80" />
-        </div>
-        <div className="relative z-10 container mx-auto max-w-4xl py-20 px-4 md:px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif text-white mb-4">
-            Experience Heritage Hospitality
-          </h2>
-          <p className="text-white/70 mb-8 max-w-xl mx-auto leading-relaxed">
-            Hotel Raj Haveli Bikaner is best suited for leisure travelers and
-            families who prioritize location access and a heritage-style stay
-            over high-rise modernity.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-secondary text-secondary-foreground hover:bg-white transition-colors font-medium px-8 py-4 rounded-xl shadow-lg"
-            >
-              <span className="flex items-center justify-center gap-2">
-                <Phone className="w-4 h-4" />
-                Contact Us
-              </span>
-            </Link>
-            <Link
-              href="/rooms"
-              className="bg-transparent border border-white/40 text-white hover:bg-white/10 transition-colors font-medium px-8 py-4 rounded-xl backdrop-blur-sm"
-            >
-              View Rooms
-            </Link>
+      {/* ========== FAQ ========== */}
+      <section className="py-20 md:py-24 px-4 md:px-6 bg-background">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="h-[1px] w-12 md:w-20 bg-primary/60" />
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">
+                FAQ
+              </p>
+              <div className="h-[1px] w-12 md:w-20 bg-primary/60" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-muted-foreground">
+              Find answers to common questions about your stay at Hotel Raj Haveli Heritage.
+            </p>
           </div>
+
+          <FaqAccordion />
         </div>
       </section>
     </div>
