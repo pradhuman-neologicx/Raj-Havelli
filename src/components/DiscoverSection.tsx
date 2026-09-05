@@ -66,7 +66,7 @@ export default function DiscoverSection() {
             Attractions of Bikaner City
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Bikaner, the desert jewel of Rajasthan, is steeped in history, culture, and architectural marvels. Explore its most iconic landmarks, all within easy reach of Raj Havelli.
+            Bikaner, the desert jewel of Rajasthan, is steeped in history, culture, and architectural marvels. Explore its most iconic landmarks, all within easy reach of Raj Haveli.
           </p>
         </div>
 

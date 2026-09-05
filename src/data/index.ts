@@ -4,7 +4,7 @@ export const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Rooms", href: "/rooms" },
-  { name: "Services", href: "/services" },
+  { name: "Amenities", href: "/amenities" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },
 ];

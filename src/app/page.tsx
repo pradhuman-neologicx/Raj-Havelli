@@ -38,10 +38,10 @@ export default function Home() {
             </p>
             <div className="h-[1px] w-16 md:w-24 bg-white"></div>
           </div>
-          <h1 className="sr-only">Raj Havelli</h1>
+          <h1 className="sr-only">Raj Haveli</h1>
           <Image
             src="/images/Lage-Logo.png"
-            alt="Raj Havelli Logo"
+            alt="Raj Haveli Logo"
             width={800}
             height={300}
             className="mx-auto w-auto h-32 md:h-48 lg:h-64 mb-6 drop-shadow-lg object-contain brightness-0 invert"
@@ -119,7 +119,7 @@ export default function Home() {
         <div className="container mx-auto">
 
           <div className="text-center mb-12 gap-4">
-            <h2 className="text-3xl md:text-5xl font-serif text-primary mb-2">A Glimpse of Raj Havelli</h2>
+            <h2 className="text-3xl md:text-5xl font-serif text-primary mb-2">A Glimpse of Raj Haveli</h2>
             <p className="text-muted-foreground text-lg">Immerse yourself in the beauty of our property.</p>
           </div>
 

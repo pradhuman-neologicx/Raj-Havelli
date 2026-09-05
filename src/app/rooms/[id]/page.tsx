@@ -82,7 +82,7 @@ export default async function RoomDetailPage({
         <div className="absolute bottom-0 left-0 right-0 z-10 px-4 md:px-8 pb-10 md:pb-14">
           <div className="container mx-auto max-w-7xl">
             <p className="text-secondary tracking-[0.2em] uppercase text-xs md:text-sm font-semibold mb-3">
-              Raj Havelli Heritage
+              Raj Haveli Heritage
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-4 drop-shadow-md">
               {room.name}

@@ -5,16 +5,16 @@ import { services } from "@/data";
 
 export const metadata: Metadata = {
   title: "Services & Amenities",
-  description: "Discover the world-class services and amenities offered at Raj Havelli.",
+  description: "Discover the world-class services and amenities offered at Raj Haveli.",
 };
 
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <PageHeader 
-        title="Experiences & Amenities" 
-        description="Curated for your ultimate relaxation and enjoyment." 
-        image="/images/spa_wellness.png" 
+      <PageHeader
+        title="Experiences & Amenities"
+        description="Curated for your ultimate relaxation and enjoyment."
+        image="/images/spa_wellness.png"
       />
 
       <section className="py-24 px-4 md:px-6">

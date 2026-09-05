@@ -5,7 +5,7 @@ import { galleryImages } from "@/data";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "View the beautiful spaces and amenities at Raj Havelli.",
+  description: "View the beautiful spaces and amenities at Raj Haveli.",
 };
 
 export default function GalleryPage() {

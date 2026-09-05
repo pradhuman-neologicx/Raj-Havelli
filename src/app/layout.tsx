@@ -16,11 +16,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Raj Havelli | Luxury Hotel",
-    template: "%s | Raj Havelli",
+    default: "Raj Haveli | Luxury Hotel",
+    template: "%s | Raj Haveli",
   },
-  description: "Experience premium Indian luxury at Raj Havelli. Discover elegant rooms, fine dining, and world-class spa facilities.",
-  metadataBase: new URL("https://raj-havelli.example.com"),
+  description: "Experience premium Indian luxury at Raj Haveli. Discover elegant rooms, fine dining, and world-class spa facilities.",
+  metadataBase: new URL("https://raj-haveli.example.com"),
 };
 
 export default function RootLayout({

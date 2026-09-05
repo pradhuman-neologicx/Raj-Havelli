@@ -7,7 +7,7 @@ export default function FacilitiesSection() {
     { name: "Gymnasium", desc1: "Treat your body...", desc2: "...and your soul!", icon: Dumbbell },
     { name: "Free Wi-Fi", desc1: "Access anywhere!", desc2: "Access everywhere!", icon: Wifi },
     { name: "Parking", desc1: "Ample space for One", desc2: "And for All!", icon: Car },
-    { name: "Room Service", desc1: "One phone call away!", desc2: "Raj Havelli At Your Service!", icon: ConciergeBell },
+    { name: "Room Service", desc1: "One phone call away!", desc2: "Raj Haveli At Your Service!", icon: ConciergeBell },
     { name: "Fine Dining", desc1: "A culinary journey", desc2: "Fit for royalty!", icon: Utensils },
   ];
 
@@ -25,7 +25,7 @@ export default function FacilitiesSection() {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-[1px] w-12 md:w-20 bg-primary/60"></div>
             <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">
-              Raj Havelli At Your Service
+              Raj Haveli At Your Service
             </p>
             <div className="h-[1px] w-12 md:w-20 bg-primary/60"></div>
           </div>

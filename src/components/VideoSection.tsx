@@ -14,7 +14,7 @@ export default function VideoSection() {
             <div className="h-[1px] w-16 md:w-24 bg-primary/50"></div>
           </div>
           <h2 className="text-3xl md:text-5xl font-serif text-primary">
-            Immerse Into Raj Havelli
+            Immerse Into Raj Haveli
           </h2>
         </div>
 
@@ -23,18 +23,18 @@ export default function VideoSection() {
           <div className="lg:col-span-1 grid grid-cols-2 gap-4 w-full">
             <div className="space-y-4 pt-8">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-md group">
-                <Image src={galleryImages[0]} fill className="object-cover group-hover:scale-110 transition-transform duration-700" alt="Raj Havelli Preview 1" sizes="(max-width: 768px) 50vw, 25vw" />
+                <Image src={galleryImages[0]} fill className="object-cover group-hover:scale-110 transition-transform duration-700" alt="Raj Haveli Preview 1" sizes="(max-width: 768px) 50vw, 25vw" />
               </div>
               <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-md group">
-                <Image src={galleryImages[4]} fill className="object-cover group-hover:scale-110 transition-transform duration-700" alt="Raj Havelli Preview 2" sizes="(max-width: 768px) 50vw, 25vw" />
+                <Image src={galleryImages[4]} fill className="object-cover group-hover:scale-110 transition-transform duration-700" alt="Raj Haveli Preview 2" sizes="(max-width: 768px) 50vw, 25vw" />
               </div>
             </div>
             <div className="space-y-4">
               <div className="relative w-full aspect-square rounded-xl overflow-hidden shadow-md group">
-                <Image src={galleryImages[5]} fill className="object-cover group-hover:scale-110 transition-transform duration-700" alt="Raj Havelli Preview 3" sizes="(max-width: 768px) 50vw, 25vw" />
+                <Image src={galleryImages[5]} fill className="object-cover group-hover:scale-110 transition-transform duration-700" alt="Raj Haveli Preview 3" sizes="(max-width: 768px) 50vw, 25vw" />
               </div>
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-md group">
-                <Image src={galleryImages[6]} fill className="object-cover group-hover:scale-110 transition-transform duration-700" alt="Raj Havelli Preview 4" sizes="(max-width: 768px) 50vw, 25vw" />
+                <Image src={galleryImages[6]} fill className="object-cover group-hover:scale-110 transition-transform duration-700" alt="Raj Haveli Preview 4" sizes="(max-width: 768px) 50vw, 25vw" />
               </div>
             </div>
           </div>

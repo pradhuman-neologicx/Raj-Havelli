@@ -26,7 +26,7 @@ export default function NotFound() {
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-2xl mx-auto space-y-8 mt-24">
-        
+
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,8 +47,8 @@ export default function NotFound() {
             Page Not Found
           </h2>
           <p className="text-lg text-white/80 max-w-md mx-auto">
-            We apologize, but the page you are looking for has either been moved or no longer exists. 
-            Please return to our homepage to continue exploring Raj Havelli.
+            We apologize, but the page you are looking for has either been moved or no longer exists.
+            Please return to our homepage to continue exploring Raj Haveli.
           </p>
         </motion.div>
 
@@ -58,15 +58,15 @@ export default function NotFound() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
         >
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className={buttonVariants({ variant: "default", size: "lg", className: "w-full sm:w-auto" })}
           >
             <Home className="mr-2 h-4 w-4" />
             Back to Home
           </Link>
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             size="lg"
             className="w-full sm:w-auto bg-white/10 text-white hover:bg-white/20 border-white/20 hover:text-white"
             onClick={() => window.history.back()}
@@ -75,7 +75,7 @@ export default function NotFound() {
             Go Back
           </Button>
         </motion.div>
-        
+
       </div>
     </div>
   );

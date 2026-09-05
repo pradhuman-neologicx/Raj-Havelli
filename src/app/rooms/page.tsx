@@ -5,16 +5,16 @@ import { rooms } from "@/data";
 
 export const metadata: Metadata = {
   title: "Accommodations",
-  description: "Explore the luxurious rooms and suites at Raj Havelli.",
+  description: "Explore the luxurious rooms and suites at Raj Haveli.",
 };
 
 export default function RoomsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <PageHeader 
-        title="Our Accommodations" 
-        description="Sanctuaries of elegance and comfort." 
-        image="/images/room_suite.png" 
+      <PageHeader
+        title="Our Accommodations"
+        description="Sanctuaries of elegance and comfort."
+        image="/images/room_suite.png"
       />
 
       <section className="py-24 px-4 md:px-6">
