@@ -70,16 +70,19 @@ export default function Home() {
       {/* Introduction Section */}
       <section className="py-24 px-4 md:px-6 bg-background">
         <div className="container mx-auto max-w-5xl text-center">
-          <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">A Legacy of Luxury</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed md:text-xl">
-            Nestled in the heart of the royal district, Raj Havelli is a testament to India&apos;s rich cultural heritage. Every archway, every courtyard, and every room has been meticulously designed to offer our guests an unparalleled experience of regal living, complemented by world-class amenities and warm, personalized hospitality.
-          </p>
-          <div className="mt-10">
-            <Link href="/about" className="inline-flex items-center text-primary font-medium hover:text-secondary-foreground transition-colors pb-1 border-b border-primary hover:border-secondary-foreground">
-              Read Our Story
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+          <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">Introduction to Raj Haveli Heritage Hotel</h2>
+          <div className="text-lg text-muted-foreground leading-relaxed md:text-xl space-y-6">
+            <p>
+              It gives us immense pleasure to introduce the existence of a newly constructed Heritage Style Hotel in the city of Bikaner viz. <strong className="text-primary font-serif font-medium">HOTEL RAJ HAVELI HERITAGE</strong>, in the heart of the city with an inventory of 24 Twin Sharing + 24 King Size Bed Room + 01 Suite making a total inventory of 49 Rooms with all the amenities and accessories equivalent to a 4-Star Hotel.
+            </p>
+            <p>
+              It features a Top Class Restaurant with a capacity of 100 Covers, Swimming Pool, Roof Top Garden & Free Wi-Fi. Additionally, it has a Banquet Hall for up to 150 persons and a Conference Hall for up to 20 persons equipped with all modern facilities.
+            </p>
+            <p className="text-base md:text-lg">
+              This property came into existence on 22nd March, 2016 and till then a lot of Travel Agencies throughout India have extended their co-operation and this year also we are getting good response from them. But we would like to put forward our humble request with you to kindly extend your cooperation and kindly experience our services and we are confident enough that we can prove our worth.
+            </p>
           </div>
+
         </div>
       </section>
 

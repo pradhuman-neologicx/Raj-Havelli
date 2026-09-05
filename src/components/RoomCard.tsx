@@ -44,7 +44,7 @@ export default function RoomCard({ room }: RoomCardProps) {
         </div>
         
         <Link
-          href={`/rooms`}
+          href={`/rooms/${room.id}`}
           className="inline-flex items-center text-sm font-medium text-primary hover:text-secondary-foreground transition-colors mt-auto"
         >
           View Details

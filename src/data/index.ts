@@ -12,9 +12,9 @@ export const navigation = [
 export const rooms = [
   {
     id: "superior",
-    name: "Superior Room",
+    name: "Super Deluxe Room",
     description: "Elegant minimalist design meeting premium comfort. Perfect for solo travelers or couples.",
-    longDescription: "Our Superior Rooms offer a tranquil retreat with minimalist Indian decor, light beige walls, and deep teal accents. Experience a restful night on a plush king bed and wake up to natural light.",
+    longDescription: "Our Super Deluxe offer a tranquil retreat with minimalist Indian decor, light beige walls, and deep teal accents. Experience a restful night on a plush king bed and wake up to natural light.",
     image: "/images/room_superior.png",
     amenities: [
       { name: "King Bed", icon: Bed },
@@ -27,7 +27,7 @@ export const rooms = [
     name: "Deluxe Room",
     description: "Spacious premium room with natural light and modern luxury decor.",
     longDescription: "The Deluxe Room provides extra space and enhanced amenities. Featuring a sitting area, modern luxury decor with teal accents, and a large marble bathroom.",
-    image: "/images/room_deluxe.png",
+    image: "/images/Gallery/Deluxe Room.jpeg",
     amenities: [
       { name: "King Bed", icon: Bed },
       { name: "Free Wi-Fi", icon: Wifi },
@@ -36,11 +36,11 @@ export const rooms = [
     ],
   },
   {
-    id: "signature",
-    name: "Signature Room",
-    description: "Luxury Indian heritage style room with intricate carvings and rich colors.",
-    longDescription: "Immerse yourself in authentic Indian heritage in our Signature Room. With intricate wood carvings, golden accents, and plush textiles, this room is a true luxury experience.",
-    image: "/images/room_signature.png",
+    id: "twin_deluxe",
+    name: "Twin Deluxe Room",
+    description: "Twin beds with premium decor and an inviting atmosphere.",
+    longDescription: "Our Twin Deluxe Room offers a tranquil retreat with minimalist Indian decor, light beige walls, and deep teal accents. Experience a restful night on a plush king bed and wake up to natural light.",
+    image: "/images/Gallery/Twin Deluxe Room.jpeg",
     amenities: [
       { name: "Premium King Bed", icon: Bed },
       { name: "Free Wi-Fi", icon: Wifi },
@@ -102,22 +102,31 @@ export const services = [
 ];
 
 export const hotelDetails = {
-  name: "Raj Havelli",
-  address: "123 Heritage Marg, Royal District, City, India",
-  phone: "+91 98765 43210",
-  email: "reservations@rajhavelli.example.com",
+  name: "Raj Haveli Heritage Hotel",
+  address: "B-222, Sadulganj Bikaner Rajasthan-334001",
+  phone: "0151-2208777, 9950584559",
+  email: "rajhaveliheritage@gmail.com",
+  website: "www.rajhaveliheritage.com",
   contactIcons: { phone: Phone, email: Mail, address: MapPin }
 };
 
 export const galleryImages = [
-  "/images/hero_bg.png",
-  "/images/room_deluxe.png",
-  "/images/room_signature.png",
-  "/images/room_suite.png",
-  "/images/room_superior.png",
-  "/images/restaurant_bg.png",
-  "/images/spa_wellness.png",
-  "/images/service_pool.png",
-  "/images/service_fitness.png",
-  "/images/service_events.png",
+  "/images/Gallery/Deluxe Room.jpeg",
+  "/images/Gallery/Buffet.jpg",
+
+  "/images/Gallery/Dinner with Live Kitchen.jpg",
+  "/images/Gallery/Enterce .jpg",
+  "/images/Gallery/Entrance.jpeg",
+  "/images/Gallery/Galary .jpg",
+  "/images/Gallery/Lobby.jpeg",
+  "/images/Gallery/Night Look .jpg",
+  "/images/Gallery/Outside view.jpeg",
+  "/images/Gallery/Restaurant (2).jpg",
+  "/images/Gallery/Restaurant (3).jpg",
+  "/images/Gallery/Restaurant.jpg",
+  "/images/Gallery/Resturant.jpg",
+  "/images/Gallery/Roof Top Garden.jpeg",
+  "/images/Gallery/Sweeming Pool.jpeg",
+  "/images/Gallery/Sweming Pool.jpeg",
+  "/images/Gallery/Twin Deluxe Room.jpeg",
 ];
