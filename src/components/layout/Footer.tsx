@@ -81,7 +81,6 @@ export default function Footer() {
                   "Restaurant",
                   "Lounge",
                   "Air Conditioning",
-                  "Power Backup",
                   "Free Wi-Fi",
                 ].map((amenity, idx) => (
                   <li key={idx} className="flex items-center gap-2">
