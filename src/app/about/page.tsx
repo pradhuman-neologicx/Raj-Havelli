@@ -433,7 +433,7 @@ export default function AboutPage() {
             {/* Map / Image */}
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/Gallery/Night Look .jpg"
+                src="/images/Gallery/Outside view.jpeg"
                 alt="Raj Haveli at Night"
                 fill
                 className="object-cover"

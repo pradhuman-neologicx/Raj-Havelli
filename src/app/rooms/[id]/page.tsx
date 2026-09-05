@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Check, Phone } from "lucide-react";
 import { rooms, hotelDetails } from "@/data";
+import RoomCarousel from "@/components/RoomCarousel";
 
 export async function generateStaticParams() {
   return rooms.map((room) => ({
@@ -100,6 +101,8 @@ export default async function RoomDetailPage({
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Left: Description & Amenities */}
             <div className="lg:col-span-3">
+
+
               {/* Decorative Divider */}
               <div className="flex items-center gap-4 mb-8">
                 <div className="h-[2px] w-12 bg-primary/40" />
@@ -107,7 +110,9 @@ export default async function RoomDetailPage({
                   Room Overview
                 </span>
               </div>
-
+              {room.gallery && room.gallery.length > 0 && (
+                <RoomCarousel images={room.gallery} />
+              )}
               <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">
                 About This Room
               </h2>
@@ -204,7 +209,7 @@ export default async function RoomDetailPage({
                     {/* CTA Buttons */}
                     <div className="space-y-3 pt-2">
                       <Link
-                        href="/contact"
+                        href="/booking"
                         className="block w-full text-center bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium px-6 py-3.5 rounded-xl shadow-sm"
                       >
                         Enquire Now

@@ -72,7 +72,27 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Amenities */}
+            <div className="space-y-4">
+              <h4 className="font-serif text-xl font-semibold">Top Amenities</h4>
+              <ul className="space-y-2">
+                {[
+                  "Swimming Pool",
+                  "Restaurant",
+                  "Lounge",
+                  "Air Conditioning",
+                  "Power Backup",
+                  "Free Wi-Fi",
+                ].map((amenity, idx) => (
+                  <li key={idx} className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-secondary shrink-0" />
+                    <span className="text-primary-foreground/80">{amenity}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact (Moved to Right) */}
             <div className="space-y-4">
               <h4 className="font-serif text-xl font-semibold">Contact Us</h4>
               <ul className="space-y-4 text-primary-foreground/80">
@@ -89,28 +109,6 @@ export default function Footer() {
                   <span>{hotelDetails.email}</span>
                 </li>
               </ul>
-            </div>
-
-            {/* Newsletter (UI Only) */}
-            <div className="space-y-4">
-              <h4 className="font-serif text-xl font-semibold">Newsletter</h4>
-              <p className="text-primary-foreground/80 text-sm">
-                Subscribe to receive exclusive offers and updates.
-              </p>
-              <form className="flex flex-col gap-2" action="#">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-md px-4 py-2 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-secondary"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="bg-secondary text-secondary-foreground font-medium rounded-md px-4 py-2 hover:bg-secondary/90 transition-colors mt-2"
-                >
-                  Subscribe
-                </button>
-              </form>
             </div>
           </div>
         </div>
