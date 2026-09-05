@@ -14,7 +14,6 @@ export default function ServicesPage() {
       <PageHeader
         title="Experiences & Amenities"
         description="Curated for your ultimate relaxation and enjoyment."
-        image="/images/spa_wellness.png"
       />
 
       <section className="py-24 px-4 md:px-6">

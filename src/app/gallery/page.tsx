@@ -14,7 +14,6 @@ export default function GalleryPage() {
       <PageHeader
         title="Visual Journey"
         description="A glimpse into the luxury that awaits."
-        image="/images/Gallery/Galary .jpg"
       />
 
       <section className="py-10 bg-background">

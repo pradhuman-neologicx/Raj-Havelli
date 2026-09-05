@@ -16,7 +16,6 @@ export default function BookingPage() {
       <PageHeader
         title="Booking Enquiry"
         description="Send us your stay requirements and our team will get back to you with the best available options."
-        image="/images/Gallery/Lobby.jpeg"
       />
 
       <section className="py-20 md:py-28 px-4 md:px-6">

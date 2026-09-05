@@ -3,12 +3,12 @@ import Image from "next/image";
 interface PageHeaderProps {
   title: string;
   description?: string;
-  image: string;
+  image?: string;
 }
 
-export default function PageHeader({ title, description, image }: PageHeaderProps) {
+export default function PageHeader({ title, description, image = "/images/page_header_bg.png" }: PageHeaderProps) {
   return (
-    <div className="relative h-[40vh] min-h-[300px] w-full flex items-center justify-center overflow-hidden">
+    <div className="relative h-[300px] w-full flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

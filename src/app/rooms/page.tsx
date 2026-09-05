@@ -14,7 +14,6 @@ export default function RoomsPage() {
       <PageHeader
         title="Our Accommodations"
         description="Sanctuaries of elegance and comfort."
-        image="/images/room_suite.png"
       />
 
       <section className="py-24 px-4 md:px-6">

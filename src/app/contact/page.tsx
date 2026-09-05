@@ -8,7 +8,6 @@ export default function ContactPage() {
       <PageHeader
         title="Contact Us"
         description="We are here to assist you with any inquiries."
-        image="/images/restaurant_bg.png"
       />
 
       <section className="py-24 px-4 md:px-6">
