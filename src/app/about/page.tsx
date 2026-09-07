@@ -188,15 +188,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-3 mt-8">
-                <Calendar className="w-4 h-4 text-primary" />
-                <span className="text-sm text-muted-foreground">
-                  Established{" "}
-                  <strong className="text-foreground">
-                    22nd March, 2016
-                  </strong>
-                </span>
-              </div>
+
             </div>
 
             {/* Image Collage */}
@@ -370,7 +362,7 @@ export default function AboutPage() {
       </section>
 
       {/* ========== GUEST REVIEWS ========== */}
-      <section className="py-20 md:py-24 px-4 md:px-6 bg-muted/30">
+      <section className="py-10 px-4 md:px-6 bg-muted/30">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-14">
             <div className="flex items-center justify-center gap-4 mb-4">

@@ -56,7 +56,7 @@ export default function FacilitiesSection() {
       {/* Bottom Venues Row */}
       <div className="w-full grid grid-cols-1 md:grid-cols-3 mt-12">
         {venues.map((venue, idx) => (
-          <div key={idx} className="group relative w-full h-[400px] flex flex-col cursor-pointer overflow-hidden">
+          <div key={idx} className="group relative w-full h-[400px] flex flex-col overflow-hidden">
             {/* Image */}
             <div className="relative w-full h-[320px] overflow-hidden bg-black/10">
               <Image
@@ -69,11 +69,10 @@ export default function FacilitiesSection() {
             </div>
             {/* Bottom Bar */}
             <div className="h-[80px] w-full flex">
-              <div className="h-full w-[80px] bg-primary/90 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
-                <ArrowRight className="text-white w-5 h-5 transition-transform group-hover:translate-x-1" />
+              <div className="h-full w-[80px] bg-primary/90 flex items-center justify-center flex-shrink-0  transition-colors">
+                <venue.icon strokeWidth={1.5} className="text-white w-6 h-6 transition-transform group-hover:translate-x-1" />
               </div>
               <div className="h-full flex-grow bg-primary flex items-center px-6 group-hover:bg-primary/90 transition-colors gap-4 text-white">
-                <venue.icon className="w-6 h-6 opacity-90" strokeWidth={1.5} />
                 <span className="font-serif text-xl tracking-wide">{venue.name}</span>
               </div>
             </div>
