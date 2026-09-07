@@ -202,7 +202,7 @@ export default function AboutPage() {
                   sizes="(max-width: 1024px) 50vw, 25vw"
                 />
               </div>
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg mt-8">
+              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/Gallery/Lobby.png"
                   alt="Raj Haveli Lobby"
@@ -421,11 +421,11 @@ export default function AboutPage() {
       {/* ========== LOCATION ========== */}
       <section className="py-20 md:py-24 px-4 md:px-6">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
             {/* Map / Image */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative aspect-video lg:aspect-auto lg:h-full min-h-[300px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/Gallery/Outside view.jpeg"
+                src="/images/Gallery/Night Look.png"
                 alt="Raj Haveli at Night"
                 fill
                 className="object-cover"
