@@ -115,7 +115,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/10">
           <div className="container mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
-            <p>&copy; {currentYear} {hotelDetails.name}. All rights reserved.</p>
+            <p>&copy; {currentYear} <strong><Link href="/" className="text-primary-foreground/80 hover:text-white transition-colors">{hotelDetails.name}</Link></strong>. All rights reserved.</p>
             <div className="flex items-center gap-6 flex-wrap justify-center md:justify-end">
               <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
