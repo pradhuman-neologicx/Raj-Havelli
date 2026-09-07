@@ -289,7 +289,7 @@ export default function AmenitiesPage() {
           {[
             "/images/Gallery/Sweeming Pool.jpeg",
             "/images/Gallery/Restaurant (3).jpg",
-            "/images/Gallery/Roof Top Garden.jpeg",
+            "/images/Gallery/Roof Top Garden.png",
             "/images/service_events.png",
           ].map((src, i) => (
             <div key={i} className="relative overflow-hidden group">

@@ -130,7 +130,7 @@ export const galleryImages = [
   "/images/Gallery/Restaurant (3).jpg",
   "/images/Gallery/Restaurant.jpg",
   "/images/Gallery/Resturant.jpg",
-  "/images/Gallery/Roof Top Garden.jpeg",
+  "/images/Gallery/Roof Top Garden.png",
   "/images/Gallery/Swimming_Pool.png",
 
 ];
