@@ -423,7 +423,7 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
             {/* Map / Image */}
-            <div className="relative aspect-video lg:aspect-auto lg:h-full min-h-[300px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative aspect-video lg:aspect-auto lg:h-full lg:min-h-[300px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/Gallery/Night Look.png"
                 alt="Raj Haveli at Night"
