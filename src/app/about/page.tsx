@@ -349,7 +349,7 @@ export default function AboutPage() {
               </div>
               <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg mt-6">
                 <Image
-                  src="/images/Gallery/Buffet.jpg"
+                  src="/images/Gallery/Buffet.png"
                   alt="Buffet"
                   fill
                   className="object-cover"

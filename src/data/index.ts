@@ -117,9 +117,9 @@ export const hotelDetails = {
 export const galleryImages = [
   "/images/Gallery/Deluxe Room.jpeg",
   "/images/Gallery/Twin Deluxe Room.jpeg",
-  "/images/Gallery/Buffet.jpg",
+  "/images/Gallery/Buffet.png",
 
-  "/images/Gallery/Dinner with Live Kitchen.jpg",
+  "/images/Gallery/Dinner with Live Kitchen.png",
   "/images/Gallery/Enterce.png",
   "/images/Gallery/Entrance.png",
   "/images/Gallery/Galary.png",
