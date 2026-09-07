@@ -16,7 +16,7 @@ export const rooms = [
     description: "Elegant minimalist design meeting premium comfort. Perfect for solo travelers or couples.",
     longDescription: "Our Super Deluxe offer a tranquil retreat with minimalist Indian decor, light beige walls, and deep teal accents. Experience a restful night on a plush king bed and wake up to natural light.",
     image: "/images/room_superior.png",
-    gallery: ["/images/room_superior.png", "/images/super-delux2.jpg", "/images/Gallery/Twin Deluxe Room.jpeg"],
+    gallery: ["/images/room_superior.png", "/images/super-delux2.jpg", "/images/Gallery/Twin Deluxe Room.png"],
     amenities: [
       { name: "King Bed", icon: Bed },
       { name: "Free Wi-Fi", icon: Wifi },
@@ -29,7 +29,7 @@ export const rooms = [
     description: "Spacious premium room with natural light and modern luxury decor.",
     longDescription: "The Deluxe Room provides extra space and enhanced amenities. Featuring a sitting area, modern luxury decor with teal accents, and a large marble bathroom.",
     image: "/images/Gallery/Deluxe Room.jpeg",
-    gallery: ["/images/Gallery/Deluxe Room.jpeg", "/images/Gallery/Twin Deluxe Room.jpeg", "/images/room_superior.png"],
+    gallery: ["/images/Gallery/Deluxe Room.jpeg", "/images/Gallery/Twin Deluxe Room.png", "/images/room_superior.png"],
     amenities: [
       { name: "King Bed", icon: Bed },
       { name: "Free Wi-Fi", icon: Wifi },
@@ -42,7 +42,7 @@ export const rooms = [
     name: "Twin Deluxe Room",
     description: "Twin beds with premium decor and an inviting atmosphere.",
     longDescription: "Our Twin Deluxe Room offers a tranquil retreat with minimalist Indian decor, light beige walls, and deep teal accents. Experience a restful night on a plush king bed and wake up to natural light.",
-    image: "/images/Gallery/Twin Deluxe Room.jpeg",
+    image: "/images/Gallery/Twin Deluxe Room.png",
     gallery: ["/images/aatwin-delux1.jpg", "/images/aatwin-delux2.jpg", "/images/aatwin-delux3.jpg"],
     amenities: [
       { name: "Premium King Bed", icon: Bed },
@@ -57,7 +57,7 @@ export const rooms = [
   //   description: "Expansive suite with a separate lounge area and rich, elegant decor.",
   //   longDescription: "The pinnacle of our offerings, the Luxury Suite features an expansive living area with floor-to-ceiling windows, deep rich green upholstery, and the finest amenities for an unforgettable stay.",
   //   image: "/images/room_suite.png",
-  //   gallery: ["/images/room_suite.png", "/images/Gallery/Deluxe Room.jpeg", "/images/Gallery/Twin Deluxe Room.jpeg", "/images/room_superior.png"],
+  //   gallery: ["/images/room_suite.png", "/images/Gallery/Deluxe Room.jpeg", "/images/Gallery/Twin Deluxe Room.png", "/images/room_superior.png"],
   //   amenities: [
   //     { name: "Master Bedroom", icon: Bed },
   //     { name: "Separate Lounge", icon: Coffee },
@@ -116,7 +116,7 @@ export const hotelDetails = {
 
 export const galleryImages = [
   "/images/Gallery/Deluxe Room.jpeg",
-  "/images/Gallery/Twin Deluxe Room.jpeg",
+  "/images/Gallery/Twin Deluxe Room.png",
   "/images/Gallery/Buffet.png",
 
   "/images/Gallery/Dinner with Live Kitchen.png",
