@@ -16,7 +16,7 @@ export default function TestimonialsSection() {
       title: "A Royal Experience",
       user: "ELEANOR_T",
       text: "An absolutely breathtaking experience. The attention to detail in the decor, the impeccable service, and the serene atmosphere make Raj Haveli the finest hotel we have ever stayed in. Highly recommended!",
-      image: "/images/hero_bg.png",
+      image: "/images/Gallery/Lobby.jpeg",
     },
     {
       title: "Unforgettable Hospitality",
