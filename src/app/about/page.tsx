@@ -195,7 +195,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 gap-4 h-fit">
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="/images/Gallery/Entrance.jpeg"
+                  src="/images/Gallery/Entrance.png"
                   alt="Raj Haveli Entrance"
                   fill
                   className="object-cover"

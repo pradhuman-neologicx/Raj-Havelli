@@ -51,20 +51,20 @@ export const rooms = [
       { name: "Airport Transfer", icon: Car },
     ],
   },
-  {
-    id: "suite",
-    name: "Luxury Suite",
-    description: "Expansive suite with a separate lounge area and rich, elegant decor.",
-    longDescription: "The pinnacle of our offerings, the Luxury Suite features an expansive living area with floor-to-ceiling windows, deep rich green upholstery, and the finest amenities for an unforgettable stay.",
-    image: "/images/room_suite.png",
-    gallery: ["/images/room_suite.png", "/images/Gallery/Deluxe Room.jpeg", "/images/Gallery/Twin Deluxe Room.jpeg", "/images/room_superior.png"],
-    amenities: [
-      { name: "Master Bedroom", icon: Bed },
-      { name: "Separate Lounge", icon: Coffee },
-      { name: "Spa Bathroom", icon: Droplets },
-      { name: "Butler Service", icon: Plane },
-    ],
-  }
+  // {
+  //   id: "suite",
+  //   name: "Luxury Suite",
+  //   description: "Expansive suite with a separate lounge area and rich, elegant decor.",
+  //   longDescription: "The pinnacle of our offerings, the Luxury Suite features an expansive living area with floor-to-ceiling windows, deep rich green upholstery, and the finest amenities for an unforgettable stay.",
+  //   image: "/images/room_suite.png",
+  //   gallery: ["/images/room_suite.png", "/images/Gallery/Deluxe Room.jpeg", "/images/Gallery/Twin Deluxe Room.jpeg", "/images/room_superior.png"],
+  //   amenities: [
+  //     { name: "Master Bedroom", icon: Bed },
+  //     { name: "Separate Lounge", icon: Coffee },
+  //     { name: "Spa Bathroom", icon: Droplets },
+  //     { name: "Butler Service", icon: Plane },
+  //   ],
+  // }
 ];
 
 export const services = [
@@ -121,8 +121,8 @@ export const galleryImages = [
 
   "/images/Gallery/Dinner with Live Kitchen.jpg",
   "/images/Gallery/Enterce.png",
-  "/images/Gallery/Entrance.jpeg",
-  "/images/Gallery/Galary .jpg",
+  "/images/Gallery/Entrance.png",
+  "/images/Gallery/Galary.png",
   "/images/Gallery/Lobby.png",
   "/images/Gallery/Night Look.png",
   "/images/Gallery/Outside view.jpeg",
