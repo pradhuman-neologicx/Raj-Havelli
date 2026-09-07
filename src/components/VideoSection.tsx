@@ -19,7 +19,7 @@ export default function VideoSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
-          {/* Left: Mini Image Gallery */}
+          {/* Left: Minii Image Gallery */}
           <div className="lg:col-span-1 grid grid-cols-2 gap-4 w-full">
             <div className="space-y-4 pt-8">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-md group">
