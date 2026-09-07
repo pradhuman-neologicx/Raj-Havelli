@@ -87,7 +87,7 @@ export default function AboutPage() {
       {/* ========== HERO ========== */}
       <section className="relative h-[55vh] min-h-[400px] md:h-[65vh] w-full overflow-hidden flex items-end">
         <Image
-          src="/images/Gallery/Enterce .jpg"
+          src="/images/Gallery/Enterce.png"
           alt="Raj Haveli Heritage Hotel Entrance"
           fill
           priority
@@ -204,7 +204,7 @@ export default function AboutPage() {
               </div>
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg mt-8">
                 <Image
-                  src="/images/Gallery/Lobby.jpeg"
+                  src="/images/Gallery/Lobby.png"
                   alt="Raj Haveli Lobby"
                   fill
                   className="object-cover"

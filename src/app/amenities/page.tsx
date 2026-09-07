@@ -182,7 +182,7 @@ export default function AmenitiesPage() {
       {/* ====== HERO ====== */}
       <section className="relative h-[50vh] min-h-[360px] w-full overflow-hidden flex items-end">
         <Image
-          src="/images/Gallery/Lobby.jpeg"
+          src="/images/Gallery/Lobby.png"
           alt="Raj Haveli Amenities"
           fill
           priority

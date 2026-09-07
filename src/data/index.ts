@@ -86,7 +86,7 @@ export const services = [
     id: "pool",
     name: "Swimming Pool",
     description: "Relax by our indoor/outdoor pool with soft warm lighting.",
-    image: "/images/service_pool.png",
+    image: "/images/Gallery/Swimming_Pool.png",
     icon: Droplets
   },
   {
@@ -116,21 +116,21 @@ export const hotelDetails = {
 
 export const galleryImages = [
   "/images/Gallery/Deluxe Room.jpeg",
+  "/images/Gallery/Twin Deluxe Room.jpeg",
   "/images/Gallery/Buffet.jpg",
 
   "/images/Gallery/Dinner with Live Kitchen.jpg",
-  "/images/Gallery/Enterce .jpg",
+  "/images/Gallery/Enterce.png",
   "/images/Gallery/Entrance.jpeg",
   "/images/Gallery/Galary .jpg",
-  "/images/Gallery/Lobby.jpeg",
-  "/images/Gallery/Night Look .jpg",
+  "/images/Gallery/Lobby.png",
+  "/images/Gallery/Night Look.png",
   "/images/Gallery/Outside view.jpeg",
   "/images/Gallery/Restaurant (2).jpg",
   "/images/Gallery/Restaurant (3).jpg",
   "/images/Gallery/Restaurant.jpg",
   "/images/Gallery/Resturant.jpg",
   "/images/Gallery/Roof Top Garden.jpeg",
-  "/images/Gallery/Sweeming Pool.jpeg",
-  "/images/Gallery/Sweming Pool.jpeg",
-  "/images/Gallery/Twin Deluxe Room.jpeg",
+  "/images/Gallery/Swimming_Pool.png",
+
 ];
