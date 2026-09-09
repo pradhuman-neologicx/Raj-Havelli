@@ -24,7 +24,7 @@ export default function Home() {
             className="object-cover object-center w-full h-full"
             poster="/images/hero_bg.png"
           >
-            <source src="/images/intro.mp4" type="video/mp4" />
+            <source src="/images/intro2.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-primary/40 md:bg-primary/30 mix-blend-multiply" />
           <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background to-transparent" />
