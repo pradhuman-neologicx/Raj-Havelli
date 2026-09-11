@@ -5,10 +5,10 @@ import { ArrowLeft, MapPin, Map, Navigation, Clock, Image as ImageIcon } from "l
 import PageHeader from "@/components/PageHeader";
 import LightboxGallery from "@/components/LightboxGallery";
 
-export default async function DestinationPage({ 
-  params 
-}: { 
-  params: Promise<{ slug: string }> 
+export default async function DestinationPage({
+  params
+}: {
+  params: Promise<{ slug: string }>
 }) {
   const { slug } = await params;
   // Use any to bypass strict type checking if some properties are missing in other destinations
@@ -20,14 +20,14 @@ export default async function DestinationPage({
 
   return (
     <div className="min-h-screen bg-background pb-12">
-      <PageHeader 
-        title={destination.name} 
+      <PageHeader
+        title={destination.name}
         description={destination.description}
         image={destination.image}
       />
 
-      <div className="container mx-auto px-4 py-16 md:py-24 max-w-6xl">
-        
+      <div className="container mx-auto px-4 py-16 md:py-24 max-w-7xl">
+
         {/* Navigation */}
         <Link href="/" className="inline-flex items-center text-primary/80 hover:text-primary mb-12 font-medium transition-colors group">
           <ArrowLeft className="mr-2 h-5 w-5 transform group-hover:-translate-x-1 transition-transform" />
@@ -36,16 +36,16 @@ export default async function DestinationPage({
 
         {/* Content Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          
+
           <div className="lg:col-span-8 space-y-16">
 
-            
+
             {/* Description */}
             <div className="prose prose-lg prose-headings:font-serif max-w-none text-muted-foreground">
               <h2 className="text-3xl md:text-4xl text-primary font-serif mb-8 leading-tight">
                 About {destination.name}
               </h2>
-              
+
               {destination.detailedDescription ? (
                 destination.detailedDescription.map((paragraph: string, idx: number) => (
                   <p key={idx} className={`text-xl leading-relaxed ${idx === 0 ? 'first-letter:text-6xl first-letter:font-serif first-letter:text-primary first-letter:mr-2 first-letter:float-left' : 'mt-6'}`}>
@@ -74,7 +74,7 @@ export default async function DestinationPage({
                 <LightboxGallery images={destination.galleryImages} />
               </div>
             )}
-            
+
             {/* Map Section */}
             {destination.mapEmbedUrl && (
               <div className="pt-8 border-t border-border/50">
@@ -83,19 +83,19 @@ export default async function DestinationPage({
                   Location Map
                 </h3>
                 <div className="rounded-2xl overflow-hidden shadow-lg border border-border/50 h-[400px]">
-                  <iframe 
-                    src={destination.mapEmbedUrl} 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen 
-                    loading="lazy" 
+                  <iframe
+                    src={destination.mapEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
               </div>
             )}
-            
+
           </div>
 
           <div className="lg:col-span-4 space-y-8">
@@ -135,10 +135,10 @@ export default async function DestinationPage({
                   </div>
                 </li>
               </ul>
-              
+
               <div className="mt-10 pt-8 border-t border-border/60 space-y-4">
                 {destination.directionsUrl ? (
-                  <a 
+                  <a
                     href={destination.directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -152,7 +152,7 @@ export default async function DestinationPage({
                     Ask Concierge
                   </button>
                 )}
-                
+
                 <p className="text-xs text-center text-muted-foreground mt-4">
                   We can arrange transport and guides for your visit.
                 </p>
