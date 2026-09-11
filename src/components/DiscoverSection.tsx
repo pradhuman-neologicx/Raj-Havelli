@@ -1,53 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
+import { bikanerDestinations } from "../data";
 
 export default function DiscoverSection() {
-  const destinations = [
-    {
-      name: "Junagarh Fort",
-      description: "Asia's Well Maintained Fort",
-      image: "/images/junagarh_fort.png"
-    },
-    {
-      name: "National Research Centre On Camel",
-      description: "Only One in Asia",
-      image: "/images/camel_research.png"
-    },
-    {
-      name: "Karni Mata Temple",
-      description: "World Famous Rat Temple",
-      image: "/images/karni_mata.png"
-    },
-    {
-      name: "Lalgarh Palace and Museum",
-      description: "A stunning red sandstone palace built in Indo-Saracenic style, now a heritage hotel and museum.",
-      image: "/images/lalgarh_palace.png"
-    },
-    {
-      name: "World Famous Rampuria Haveli",
-      description: "Renowned for its exquisite architecture and intricate sandstone carvings.",
-      image: "/images/rampuria_haveli.png"
-    },
-    {
-      name: "Heritage Route",
-      description: "Thousands of Havelis, World Famous Bhandasar Jain Temple, Laxminath Ji Temple Bika Ji Ki Takri, Spice Market, Old Bazar. Due to narrow streets, this is only possible by Horse Cart or Auto.",
-      image: "/images/heritage_route.png"
-    },
-    {
-      name: "Gajner Lake and Wildlife Sanctuary",
-      description: "A lush green sanctuary with a serene lake, perfect for wildlife spotting.",
-      image: "/images/gajner_lake.png"
-    },
-    {
-      name: "Sand Dunes",
-      description: "Many Desert Camps In Raisar Village 20 KM from the City.",
-      image: "/images/sand_dunes.png"
-    },
-    {
-      name: "Bikaner's Famous Delicacies",
-      description: "Bikaner is also famous for Namkin, Bhujia, Papad, and Sweets, specially Bhujia & Rasgulla.",
-      image: "/images/bikaner_sweets.png"
-    }
-  ];
+  const destinations = bikanerDestinations;
 
   return (
     <section className="py-24 bg-background">
@@ -73,14 +29,16 @@ export default function DiscoverSection() {
         {/* Grid of Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {destinations.map((dest, idx) => (
-            <div key={idx} className="group relative h-[450px] rounded-2xl overflow-hidden shadow-lg cursor-pointer">
-              {/* Full Image */}
+            <Link key={idx} href={`/bikaner/${dest.slug}`}>
+              <div className="group relative h-[450px] rounded-2xl overflow-hidden shadow-lg cursor-pointer block">
+                {/* Full Image */}
               <Image
                 src={dest.image}
                 alt={dest.name}
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={idx <= 2}
               />
 
               {/* Gradient Overlay for text readability */}
@@ -95,6 +53,7 @@ export default function DiscoverSection() {
                 </p>
               </div>
             </div>
+            </Link>
           ))}
         </div>
 
