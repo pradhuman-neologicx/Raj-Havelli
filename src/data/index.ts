@@ -325,6 +325,8 @@ export const bikanerDestinations = [
       "Recognized as a site of national historical importance, the temple is meticulously protected and maintained under the observation of the Archaeological Survey of India."
     ],
     timings: "Open daily until around 8:00 PM",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d28180.41876287077!2d73.29694458710352!3d28.007589214721012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x393fe763aaaaaaab%3A0x345f45499c23dfd1!2sHotel%20Raj%20Haveli%2C%20B-222%2C%20Sadul%20Ganj%2C%20Bikaner%2C%20Rajasthan%20334002!3m2!1d28.0140504!2d73.33424269999999!4m5!1s0x393fe78b57395717%3A0x1a6cd2357f795b9d!2sSeth%20Bhandashah%20Jain%20Temple%2C%202832%2BW82%2C%20Old%20Bikaner%2C%20Bikaner%2C%20Rajasthan%20334001!3m2!1d28.004758499999998!2d73.3006706!5e0!3m2!1sen!2sin!4v1789115566309!5m2!1sen!2sin",
+    directionsUrl: "https://www.google.com/maps/dir/Hotel+Raj+Haveli,+Bikaner/Seth+Bhandashah+Jain+Temple,+Bikaner/",
     galleryImages: [
       "/images/jain_temple.png",
       "/images/Bhandasar_Jain_Temple_Bikaner_DSC_1089.jpg",
@@ -338,30 +340,94 @@ export const bikanerDestinations = [
     slug: "acharya-tulsi-samadhi",
     name: "Acharya Tulsi Samadhi Sthal",
     description: "A serene memorial honoring the great Jain saint Acharya Tulsi.",
-    image: "/images/acharya_tulsi.png"
+    image: "/images/acharya_tulsi.png",
+    location: "Choudhary Colony Road, Gangashahar, Bikaner, Rajasthan 334001",
+    detailedDescription: [
+      "Acharya Tulsi Samadhi Sthal, also known as Naitikta Ka Shaktipith, is a prominent Jain memorial and temple located in the suburbs of Bikaner. Dedicated to Acharya Tulsi, the revered ninth head of the Terapanth Jain sect and founder of the Anuvrat Movement, this beautifully constructed site serves as his final resting place.",
+      "The site is deeply appreciated by visitors as a quiet, serene, and remarkably well-maintained space that is perfect for meditation, prayer, and deep introspection. The surrounding Meditation Gardens offer beautifully manicured green spaces that further enhance the peaceful environment.",
+      "A key highlight of the site is the Museum & Library. It houses historical exhibits detailing the life, literary works (he authored over 100 books), and spiritual journey of Acharya Tulsi. Visitors can even see a unique display of a commemorative 5-rupee coin bearing his likeness.",
+      "The complex is designed to be welcoming for all, featuring wheelchair-accessible entrances and exits, on-site parking, and clean facilities to ensure a comfortable visit."
+    ],
+    timings: "Open daily for visitors",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d28181.929321124997!2d73.30096313709015!3d28.00181436492968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x393fe763aaaaaaab%3A0x345f45499c23dfd1!2sHotel%20Raj%20Haveli%2C%20B-222%2C%20Sadul%20Ganj%2C%20Bikaner%2C%20Rajasthan%20334002!3m2!1d28.0140504!2d73.33424269999999!4m5!1s0x393fe79632728977%3A0x5a2219d763d5b9d4!2sAcharya%20Tulsi%20Samadhi%20Sthal%20(Naitikta%20ka%20Shaktipith)%2C%20X8Q5%2BVQ7%2C%20Choudhary%20Colony%20Rd%2C%20Gangashahar%2C%20Bikaner%2C%20Rajasthan%20334401!3m2!1d27.989717799999998!2d73.3094156!5e0!3m2!1sen!2sin!4v1789115688249!5m2!1sen!2sin",
+    directionsUrl: "https://www.google.com/maps/dir/Hotel+Raj+Haveli,+Bikaner/Acharya+Tulsi+Samadhi+Sthal,+Bikaner/",
+    galleryImages: [
+      "/images/acharya_tulsi.png"
+    ]
   },
   {
     slug: "sagar-chatri",
-    name: "Sagar Chatri",
-    description: "A historical site featuring beautiful cenotaphs.",
-    image: "/images/sagar_chatri.png"
+    name: "Devi Kund Sagar (Sagar Chatri)",
+    description: "A royal crematorium and memorial site featuring intricately carved cenotaphs.",
+    image: "/images/sagar_chatri.png",
+    location: "Outskirts of Bikaner (8 km from city center)",
+    detailedDescription: [
+      "Sagar Chatri, more commonly known as Devi Kund Sagar, is a magnificent royal crematorium and memorial site located about 8 km on the outskirts of Bikaner city. It serves as the final resting place and memorial grounds for the royal family of Bikaner, honoring generations of rulers starting from Rao Kalyanmal (the 5th ruler) up to more recent times.",
+      "The site is a striking showcase of architectural evolution, featuring a beautiful blend of Rajputana and Islamic architectural styles. The older cenotaphs (chhatris) are predominantly constructed using the region's famous red Dulmera sandstone, while the newer memorials are carved from pristine white marble.",
+      "Beyond the impressive structural design, Devi Kund Sagar is renowned for its detailed artworks. Visitors can admire the intricately carved pillars and vibrant, traditional Rajasthani paintings that adorn the ceilings of several prominent chhatris. It stands as a peaceful, historical tribute to Bikaner's royal legacy."
+    ],
+    timings: "Open daily for visitors",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d56355.505646586964!2d73.31889747835343!3d28.017778407263428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x393fe763aaaaaaab%3A0x345f45499c23dfd1!2sHotel%20Raj%20Haveli%2C%20B-222%2C%20Sadul%20Ganj%2C%20Bikaner%2C%20Rajasthan%20334002!3m2!1d28.0140504!2d73.33424269999999!4m5!1s0x393fe1e9a4f6b0e7%3A0x6ae1bc3291f8c779!2sSagar%20Chatri%2C%20299R%2BQ44%2C%20Sagar%20Rd%2C%20Ridmalsar%2C%20Sharah%20Kajani%2C%20Rajasthan%20334022!3m2!1d28.019376899999997!2d73.39033789999999!5e0!3m2!1sen!2sin!4v1789116054709!5m2!1sen!2sin",
+    directionsUrl: "https://www.google.com/maps/dir/Hotel+Raj+Haveli,+Bikaner/Sagar+Chatri,+Bikaner/",
+    galleryImages: [
+      "/images/sagar_chatri.png"
+    ]
   },
   {
     slug: "laxminath-temple",
     name: "Shri Laxminath Temple",
     description: "One of the oldest temples in Bikaner, dedicated to Lord Vishnu and Goddess Laxmi.",
-    image: "/images/laxminath_temple.png"
+    image: "/images/laxminath_temple.png",
+    location: "Old Bikaner, Bikaner, Rajasthan",
+    detailedDescription: [
+      "Shri Laxminath Temple is the oldest standing Hindu temple in Bikaner, serving as a highly revered spiritual and cultural landmark. Dedicated to Lord Vishnu and his consort, Goddess Laxmi, the temple holds a profound place in local heritage. Historically, the rulers of Bikaner regarded Lord Laxminath as the true king and actual ruler of the state, considering themselves merely as ministers governing on his behalf.",
+      "The temple boasts immense historical significance. It was commissioned around 1488 AD by the city's founder, Rao Bika Ji, and structurally completed between 1504 and 1526 CE by Maharaja Rao Lunakaran, with later enhancements by Maharaja Ganga Singh.",
+      "Architecturally, it is a masterpiece constructed primarily from high-grade red sandstone imported from Jaisalmer and pristine white marble. The shrine features a spectacular silver-embellished main doorway and intricately carved internal columns.",
+      "During major festivals like Diwali, Janmashtami, Ram Navami, and Nirjala Ekadashi, the temple transforms into a lively, vibrant cultural hub. Please note the strict entry rules: leather items (belts, wallets, bags), footwear, and photography are strictly prohibited inside the main temple premises."
+    ],
+    timings: "5:00 AM - 1:00 PM & 5:00 PM - 11:00 PM (Entry is Free)",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d7045.409578766379!2d73.29083069238061!3d28.002926963436558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x393fe763aaaaaaab%3A0x345f45499c23dfd1!2sHotel%20Raj%20Haveli%2C%20B-222%2C%20Sadul%20Ganj%2C%20Bikaner%2C%20Rajasthan%20334002!3m2!1d28.0140504!2d73.33424269999999!4m5!1s0x393fe78b554784b3%3A0xcd8e868d13b9656c!2sNagar%20Seth%20Shree%20Laxminath%20Ji%20mandir%2C%202832%2BV47%2C%20Bara%20Bazar%20Rd%2C%20Old%20City%20Rampuriya%2C%20Bikaner%2C%20Rajasthan%20334001!3m2!1d28.0046598!2d73.3002934!5e0!3m2!1sen!2sin!4v1789116489805!5m2!1sen!2sin",
+    directionsUrl: "https://www.google.com/maps/dir/Hotel+Raj+Haveli,+Bikaner/Nagar+Seth+Shree+Laxminath+Ji+mandir,+Bikaner/",
+    galleryImages: [
+      "/images/laxminath_temple.png"
+    ]
   },
   {
     slug: "bikaji-ki-tekri",
     name: "Bikaji Ki Tekri",
-    description: "The original fort of Bikaner built by Rao Bika, a site of immense historical importance.",
-    image: "/images/bikaji_tekri.png"
+    description: "The first fort of Bikaner and the exact birthplace of the city, built by Rao Bika.",
+    image: "/images/bikaji_tekri.webp",
+    location: "Old City area near Hammalon Ki Bari, Bikaner, Rajasthan",
+    detailedDescription: [
+      "Bikaji Ki Tekri is the first fort and the oldest surviving structure in Bikaner, marking the exact birthplace where the foundation of the city was laid in 1488. Constructed around 500 years ago by Rao Bika, the founder of Bikaner, this hillock (tekri) is the very spot where he first camped and established his kingdom after leaving Jodhpur.",
+      "Built predominantly from the region's distinct red sandstone (Dulmera stone), the fort offers a humble yet fascinating glimpse into the early military architecture and history of the area, long before the grand Junagarh Fort was constructed.",
+      "Unlike the later lavish palaces, Bikaji Ki Tekri is smaller and more rugged. It features interconnected rooms and beautiful royal chhatris (cenotaphs) dedicated to the early rulers of Bikaner.",
+      "Conveniently located in the old city area near Hammalon Ki Bari, the fort is within just 500 meters of the famous Bhandashah Jain Temple and the highly revered Laxminath Ji Temple, making it an excellent addition to a historic walking tour. Most visitors spend about 2 to 3 hours exploring the structure."
+    ],
+    timings: "Open daily for visitors",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d28180.41876287077!2d73.29764438710352!3d28.007589214721012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x393fe763aaaaaaab%3A0x345f45499c23dfd1!2sHotel%20Raj%20Haveli%2C%20B-222%2C%20Sadul%20Ganj%2C%20Bikaner%2C%20Rajasthan%20334002!3m2!1d28.0140504!2d73.33424269999999!4m5!1s0x393fe78cf944364d%3A0xf03d8b5c2a3b11a2!2sBikaji%20Ki%20Tekri%2C%202823%2BW4V%2C%20Hammalon%20Ki%20Bari%2C%20Bikaner%2C%20Rajasthan%20334001!3m2!1d28.0023506!2d73.3027951!5e0!3m2!1sen!2sin!4v1789117301236!5m2!1sen!2sin",
+    directionsUrl: "https://www.google.com/maps/dir/Hotel+Raj+Haveli,+Bikaner/Bikaji+Ki+Tekri,+Bikaner/",
+    galleryImages: [
+      "/images/bikaji_tekri.webp",
+    ]
   },
   {
     slug: "kem-road",
-    name: "KEM Road",
-    description: "The main shopping street of Bikaner, bustling with local markets and shops.",
-    image: "/images/kem_road.png"
+    name: "KEM Road (Shopping District)",
+    description: "The premier shopping district and bustling commercial artery in the heart of Bikaner.",
+    image: "/images/kem_road.png",
+    location: "K.E.M. Road, Bikaner, Rajasthan",
+    detailedDescription: [
+      "KEM Road (King Edward Memorial Road) is the premier shopping district and a bustling commercial artery located right in the heart of Bikaner. Serving as a vital transit link, it directly connects the historic Junagarh Fort area to the vibrant Old City and the famous Kotegate market complex.",
+      "Known as a one-stop destination for both locals and tourists, the street is celebrated for its wide array of traditional goods. You can find exquisite local Rajasthani fabrics, colorful bandhani saris, authentic leather and wooden artifacts, and intricately embroidered footwear (mojris).",
+      "Beyond textiles and crafts, KEM Road is a paradise for food lovers. It houses numerous legendary sweet and namkeen shops serving up fresh Bikaneri bhujia, famous rasgullas, and a variety of mouth-watering street snacks.",
+      "The street is also home to major local commercial hubs like Khajanchi Market, Jain Market, and Heeralal Mall, alongside modern amenities including electronics stores and key banking institutions. Bargaining is a common practice across the smaller stalls, making it an excellent spot to purchase local souvenirs at budget-friendly rates."
+    ],
+    timings: "10:00 AM to 9:00 PM (Most shops closed on Tuesdays)",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d14089.011118440594!2d73.31542730549208!3d28.01674886610218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x393fe763aaaaaaab%3A0x345f45499c23dfd1!2sHotel%20Raj%20Haveli%2C%20B-222%2C%20Sadul%20Ganj%2C%20Bikaner%2C%20Rajasthan%20334002!3m2!1d28.0140504!2d73.33424269999999!4m5!1s0x393fdd7b94c90517%3A0x2d7d7319ae176e16!2sKEM%20Rd%2C%20Bikaner%2C%20Rajasthan%20334001!3m2!1d28.019297599999998!2d73.3170708!5e0!3m2!1sen!2sin!4v1789117228286!5m2!1sen!2sin",
+    directionsUrl: "https://www.google.com/maps/dir/Hotel+Raj+Haveli,+Bikaner/KEM+Rd,+Bikaner/",
+    galleryImages: [
+      "/images/kem_road.png"
+    ]
   }
 ];
