@@ -72,9 +72,9 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Amenities */}
+            {/* Amenities & Experiences */}
             <div className="space-y-4">
-              <h4 className="font-serif text-xl font-semibold">Top Amenities</h4>
+              <h4 className="font-serif text-xl font-semibold">Amenities & Safari</h4>
               <ul className="space-y-2">
                 {[
                   "Swimming Pool",
@@ -82,6 +82,8 @@ export default function Footer() {
                   "Lounge",
                   "Air Conditioning",
                   "Free Wi-Fi",
+                  "Camel Safari (On demand)",
+                  "Jeep Safari (On demand)"
                 ].map((amenity, idx) => (
                   <li key={idx} className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-secondary shrink-0" />
