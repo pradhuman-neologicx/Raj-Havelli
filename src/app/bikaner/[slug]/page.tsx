@@ -1,6 +1,7 @@
 import { bikanerDestinations } from "@/data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, MapPin, Map, Navigation, Clock, Image as ImageIcon } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import LightboxGallery from "@/components/LightboxGallery";
@@ -11,12 +12,16 @@ export default async function DestinationPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params;
-  // Use any to bypass strict type checking if some properties are missing in other destinations
   const destination = bikanerDestinations.find(d => d.slug === slug) as any;
 
   if (!destination) {
     notFound();
   }
+
+  // Get 4 random destinations excluding the current one
+  const otherDestinations = bikanerDestinations.filter(d => d.slug !== slug);
+  const shuffled = [...otherDestinations].sort(() => 0.5 - Math.random());
+  const suggestedDestinations = shuffled.slice(0, 4);
 
   return (
     <div className="min-h-screen bg-background pb-12">
@@ -29,7 +34,7 @@ export default async function DestinationPage({
       <div className="container mx-auto px-4 py-16 md:py-24 max-w-7xl">
 
         {/* Navigation */}
-        <Link href="/" className="inline-flex items-center text-primary/80 hover:text-primary mb-12 font-medium transition-colors group">
+        <Link href="/#discover" className="inline-flex items-center text-primary/80 hover:text-primary mb-12 font-medium transition-colors group">
           <ArrowLeft className="mr-2 h-5 w-5 transform group-hover:-translate-x-1 transition-transform" />
           Back to Explore
         </Link>
@@ -109,7 +114,7 @@ export default async function DestinationPage({
                   </div>
                   <div>
                     <h4 className="text-sm font-bold tracking-wider uppercase text-primary mb-1">Location</h4>
-                    <p className="text-base text-muted-foreground">Bikaner, Rajasthan</p>
+                    <p className="text-base text-muted-foreground">{destination.location || "Bikaner, Rajasthan"}</p>
                   </div>
                 </li>
 
@@ -161,6 +166,30 @@ export default async function DestinationPage({
           </div>
 
         </div>
+
+        {/* More Destinations Section */}
+        <div className="mt-24 pt-16 border-t border-border/50">
+          <h2 className="text-3xl font-serif text-primary mb-10 text-center">Explore More Destinations</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {suggestedDestinations.map((dest, idx) => (
+              <Link key={idx} href={`/bikaner/${dest.slug}`} className="group block">
+                <div className="relative h-64 rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
+                  <Image 
+                    src={dest.image} 
+                    alt={dest.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white transform transition-transform duration-500 group-hover:-translate-y-1">
+                    <h3 className="text-lg font-serif line-clamp-2">{dest.name}</h3>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
       </div>
     </div>
   );
