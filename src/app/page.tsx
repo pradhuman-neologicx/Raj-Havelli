@@ -81,6 +81,38 @@ export default function Home() {
             <p className="text-base md:text-lg">
               This property came into existence on 22nd March, 2016 and till then a lot of Travel Agencies throughout India have extended their co-operation and this year also we are getting good response from them. But we would like to put forward our humble request with you to kindly extend your cooperation and kindly experience our services and we are confident enough that we can prove our worth.
             </p>
+
+          </div>
+
+          <div className="mt-16 grid md:grid-cols-2 gap-0 items-center bg-muted/30 rounded-3xl overflow-hidden shadow-sm border border-border/50 text-left mx-auto max-w-5xl hover:shadow-md transition-shadow duration-300 group">
+            <div className="relative h-64 md:h-full min-h-[350px] w-full overflow-hidden">
+              <Image 
+                src="/images/sand_dunes.png" 
+                alt="Desert Safari in Bikaner" 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div className="p-8 md:p-12 bg-card h-full flex flex-col justify-center">
+              <h3 className="font-serif text-3xl text-primary mb-4 font-medium flex items-center">
+                <span className="text-2xl mr-2">✨</span> Curated Desert Experiences
+              </h3>
+              <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                Immerse yourself in the golden sands of Bikaner. We organize exclusive, tailored safari experiences directly from the hotel so you can explore the Thar desert in comfort and style.
+              </p>
+              <ul className="space-y-4 text-lg">
+                <li className="flex items-center text-muted-foreground bg-muted/50 p-4 rounded-2xl border border-border/50 hover:bg-muted transition-colors">
+                  <span className="text-3xl mr-4 flex-shrink-0">🐪</span> 
+                  <span className="font-semibold text-foreground mr-auto">Camel Safari</span> 
+                  <span className="italic text-primary/90 text-sm border border-primary/20 bg-primary/10 px-3 py-1 rounded-full whitespace-nowrap font-medium">On demand</span>
+                </li>
+                <li className="flex items-center text-muted-foreground bg-muted/50 p-4 rounded-2xl border border-border/50 hover:bg-muted transition-colors">
+                  <span className="text-3xl mr-4 flex-shrink-0">🚙</span> 
+                  <span className="font-semibold text-foreground mr-auto">Jeep Safari</span> 
+                  <span className="italic text-primary/90 text-sm border border-primary/20 bg-primary/10 px-3 py-1 rounded-full whitespace-nowrap font-medium">On demand</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
         </div>
