@@ -308,6 +308,8 @@ export const bikanerDestinations = [
       "**Traditional Rajasthani Meals:** No trip is complete without a full Rajasthani thali. Savor authentic Dal Baati Churma baked over open coals at Jai Hind Restaurant. Relish home-style Gatte ki Sabzi or try the clever desert staple, Papad ki Sabzi, at classic joints like Ramlal Ji Ka Bassa."
     ],
     timings: "From morning breakfast until late night",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d261.79373183455465!2d73.31202759006865!3d28.016449549257434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x393fe763aaaaaaab%3A0x345f45499c23dfd1!2sHotel%20Raj%20Haveli%2C%20B-222%2C%20Sadul%20Ganj%2C%20Bikaner%2C%20Rajasthan%20334002!3m2!1d28.0140504!2d73.33424269999999!4m5!1s0x393fdd634d7eed4f%3A0xc185ae96557b8d0f!2sKatla%20Rd%2C%20Kote%20Gate%2C%20Bikaner%2C%20Rajasthan%20334001!3m2!1d28.0165081!2d73.31191749999999!5e0!3m2!1sen!2sin!4v1789119921944!5m2!1sen!2sin",
+    directionsUrl: "https://www.google.com/maps/dir/Hotel+Raj+Haveli,+Bikaner/Katla+Rd,+Kote+Gate,+Bikaner/",
     galleryImages: [
       "/images/bikaner_sweets.png"
     ]

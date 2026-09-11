@@ -36,7 +36,7 @@ export default async function DestinationPage({
         {/* Navigation */}
         <Link href="/#discover" className="inline-flex items-center text-primary/80 hover:text-primary mb-12 font-medium transition-colors group">
           <ArrowLeft className="mr-2 h-5 w-5 transform group-hover:-translate-x-1 transition-transform" />
-          Back to Explore
+          Back to Attractions
         </Link>
 
         {/* Content Section */}
@@ -174,8 +174,8 @@ export default async function DestinationPage({
             {suggestedDestinations.map((dest, idx) => (
               <Link key={idx} href={`/bikaner/${dest.slug}`} className="group block">
                 <div className="relative h-64 rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
-                  <Image 
-                    src={dest.image} 
+                  <Image
+                    src={dest.image}
                     alt={dest.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
