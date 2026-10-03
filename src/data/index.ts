@@ -5,6 +5,7 @@ export const navigation = [
   { name: "About", href: "/about" },
   { name: "Rooms", href: "/rooms" },
   { name: "Amenities", href: "/amenities" },
+  { name: "Dining", href: "/dining" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },
 ];
@@ -17,10 +18,20 @@ export const rooms = [
     longDescription: "Our Super Deluxe offer a tranquil retreat with minimalist Indian decor, light beige walls, and deep teal accents. Experience a restful night on a plush king bed and wake up to natural light.",
     image: "/images/room_superior.png",
     gallery: ["/images/room_superior.png", "/images/super-delux2.jpg", "/images/Gallery/Twin Deluxe Room.png"],
+    details: {
+      size: "250 sq ft",
+      bed: "King Bed",
+      occupancy: "2 Adults + 1 Child",
+      breakfast: "Included",
+      view: "City View",
+      bathroom: "Shower",
+      wifi: "Complimentary",
+      ac: "Yes"
+    },
     amenities: [
       { name: "King Bed", icon: Bed },
       { name: "Free Wi-Fi", icon: Wifi },
-      { name: "Coffee Maker", icon: Coffee },
+      { name: "Room Service", icon: Utensils },
     ],
   },
   {
@@ -30,6 +41,16 @@ export const rooms = [
     longDescription: "The Deluxe Room provides extra space and enhanced amenities. Featuring a sitting area, modern luxury decor with teal accents, and a large marble bathroom.",
     image: "/images/Gallery/Deluxe Room.jpeg",
     gallery: ["/images/Gallery/Deluxe Room.jpeg", "/images/Gallery/Twin Deluxe Room.png", "/images/room_superior.png"],
+    details: {
+      size: "300 sq ft",
+      bed: "King Bed",
+      occupancy: "2 Adults + 2 Children",
+      breakfast: "Included",
+      view: "Garden View",
+      bathroom: "Bathtub & Shower",
+      wifi: "Complimentary",
+      ac: "Yes"
+    },
     amenities: [
       { name: "King Bed", icon: Bed },
       { name: "Free Wi-Fi", icon: Wifi },
@@ -41,14 +62,24 @@ export const rooms = [
     id: "twin_deluxe",
     name: "Twin Deluxe Room",
     description: "Twin beds with premium decor and an inviting atmosphere.",
-    longDescription: "Our Twin Deluxe Room offers a tranquil retreat with minimalist Indian decor, light beige walls, and deep teal accents. Experience a restful night on a plush king bed and wake up to natural light.",
+    longDescription: "Our Twin Deluxe Room offers a tranquil retreat with minimalist Indian decor, light beige walls, and deep teal accents. Experience a restful night on plush twin beds and wake up to natural light.",
     image: "/images/Gallery/Twin Deluxe Room.png",
     gallery: ["/images/aatwin-delux1.jpg", "/images/aatwin-delux2.jpg", "/images/aatwin-delux3.jpg"],
+    details: {
+      size: "300 sq ft",
+      bed: "Twin Beds",
+      occupancy: "2 Adults",
+      breakfast: "Included",
+      view: "City View",
+      bathroom: "Shower",
+      wifi: "Complimentary",
+      ac: "Yes"
+    },
     amenities: [
-      { name: "Premium King Bed", icon: Bed },
+      { name: "Twin Beds", icon: Bed },
       { name: "Free Wi-Fi", icon: Wifi },
       { name: "Luxury Bath", icon: Droplets },
-      { name: "Airport Transfer", icon: Car },
+      { name: "Room Service", icon: Utensils },
     ],
   },
   // {

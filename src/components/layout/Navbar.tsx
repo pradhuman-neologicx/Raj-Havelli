@@ -90,7 +90,7 @@ export default function Navbar() {
               )}
             >
               <CalendarDays className="w-4 h-4" />
-              Enquire Now
+              Book Now
             </Link>
             
             {/* Mobile Menu Button */}
@@ -133,7 +133,7 @@ export default function Navbar() {
                 className="w-full flex justify-center items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-semibold px-6 py-3 rounded-xl shadow-sm"
               >
                 <CalendarDays className="w-5 h-5" />
-                Enquire Now
+                Book Now
               </Link>
             </div>
           </div>

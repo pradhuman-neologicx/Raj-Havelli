@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, Phone } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Phone, Maximize, Users, Utensils, Eye, Droplets, Wifi, Snowflake, Bed } from "lucide-react";
 import { rooms, hotelDetails } from "@/data";
 import RoomCarousel from "@/components/RoomCarousel";
 
@@ -121,6 +121,41 @@ export default async function RoomDetailPage({
                 {room.longDescription}
               </p>
 
+              {/* Specific Details */}
+              {room.details && (
+                <div className="mb-12">
+                  <h3 className="text-xl font-serif text-primary mb-6">
+                    Room Details
+                  </h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-foreground/80">
+                    <div className="flex flex-col gap-1 p-4 rounded-xl bg-muted/20 border border-border/50">
+                      <div className="flex items-center gap-2 text-primary font-medium mb-1">
+                        <Maximize className="h-4 w-4" /> Size
+                      </div>
+                      <span className="text-muted-foreground">{room.details.size}</span>
+                    </div>
+                    <div className="flex flex-col gap-1 p-4 rounded-xl bg-muted/20 border border-border/50">
+                      <div className="flex items-center gap-2 text-primary font-medium mb-1">
+                        <Bed className="h-4 w-4" /> Bed
+                      </div>
+                      <span className="text-muted-foreground">{room.details.bed}</span>
+                    </div>
+                    <div className="flex flex-col gap-1 p-4 rounded-xl bg-muted/20 border border-border/50">
+                      <div className="flex items-center gap-2 text-primary font-medium mb-1">
+                        <Users className="h-4 w-4" /> Occupancy
+                      </div>
+                      <span className="text-muted-foreground">{room.details.occupancy}</span>
+                    </div>
+                    <div className="flex flex-col gap-1 p-4 rounded-xl bg-muted/20 border border-border/50">
+                      <div className="flex items-center gap-2 text-primary font-medium mb-1">
+                        <Eye className="h-4 w-4" /> View
+                      </div>
+                      <span className="text-muted-foreground">{room.details.view}</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Amenities Grid */}
               <div className="mb-12">
                 <h3 className="text-xl font-serif text-primary mb-6">
@@ -212,7 +247,7 @@ export default async function RoomDetailPage({
                         href="/booking"
                         className="block w-full text-center bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium px-6 py-3.5 rounded-xl shadow-sm"
                       >
-                        Enquire Now
+                        Book Now
                       </Link>
                       <a
                         href={`tel:${hotelDetails.phone.split(",")[0].trim()}`}

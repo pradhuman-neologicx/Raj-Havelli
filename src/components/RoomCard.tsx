@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Maximize, Users, Utensils, Eye, Droplets, Wifi, Snowflake, Bed } from "lucide-react";
 
 interface RoomCardProps {
   room: {
@@ -9,6 +9,16 @@ interface RoomCardProps {
     description: string;
     image: string;
     amenities: Array<{ name: string; icon: any }>;
+    details?: {
+      size: string;
+      bed: string;
+      occupancy: string;
+      breakfast: string;
+      view: string;
+      bathroom: string;
+      wifi: string;
+      ac: string;
+    };
   };
 }
 
@@ -30,25 +40,64 @@ export default function RoomCard({ room }: RoomCardProps) {
           {room.name}
         </h3>
         
-        <p className="text-muted-foreground mb-6 flex-grow">
+        <p className="text-muted-foreground mb-6">
           {room.description}
         </p>
-        
-        <div className="grid grid-cols-2 gap-y-3 gap-x-4 mb-6">
-          {room.amenities.slice(0, 4).map((amenity, index) => (
-            <div key={index} className="flex items-center gap-2 text-sm text-foreground/80">
-              <amenity.icon className="h-4 w-4 text-secondary-foreground" />
-              <span>{amenity.name}</span>
+
+        {room.details && (
+          <div className="grid grid-cols-2 gap-y-3 gap-x-4 mb-8 text-sm text-foreground/80 flex-grow">
+            <div className="flex items-center gap-2">
+              <Maximize className="h-4 w-4 text-secondary-foreground" />
+              <span className="truncate" title={room.details.size}>{room.details.size}</span>
             </div>
-          ))}
-        </div>
+            <div className="flex items-center gap-2">
+              <Bed className="h-4 w-4 text-secondary-foreground" />
+              <span className="truncate" title={room.details.bed}>{room.details.bed}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="h-4 w-4 text-secondary-foreground" />
+              <span className="truncate" title={room.details.occupancy}>{room.details.occupancy}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Utensils className="h-4 w-4 text-secondary-foreground" />
+              <span className="truncate" title={room.details.breakfast}>{room.details.breakfast}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Eye className="h-4 w-4 text-secondary-foreground" />
+              <span className="truncate" title={room.details.view}>{room.details.view}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Droplets className="h-4 w-4 text-secondary-foreground" />
+              <span className="truncate" title={room.details.bathroom}>{room.details.bathroom}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Wifi className="h-4 w-4 text-secondary-foreground" />
+              <span className="truncate" title={room.details.wifi}>{room.details.wifi}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Snowflake className="h-4 w-4 text-secondary-foreground" />
+              <span className="truncate" title="Air Conditioned">{room.details.ac === "Yes" ? "Air Conditioned" : "No AC"}</span>
+            </div>
+          </div>
+        )}
+
+        {!room.details && (
+          <div className="grid grid-cols-2 gap-y-3 gap-x-4 mb-6 flex-grow">
+            {room.amenities.slice(0, 4).map((amenity, index) => (
+              <div key={index} className="flex items-center gap-2 text-sm text-foreground/80">
+                <amenity.icon className="h-4 w-4 text-secondary-foreground" />
+                <span>{amenity.name}</span>
+              </div>
+            ))}
+          </div>
+        )}
         
         <Link
           href={`/rooms/${room.id}`}
-          className="inline-flex items-center text-sm font-medium text-primary hover:text-secondary-foreground transition-colors mt-auto"
+          className="mt-auto w-full inline-flex justify-center items-center bg-primary text-white hover:bg-primary/90 transition-colors font-medium px-6 py-3 rounded-md shadow-sm"
         >
-          View Details
-          <ArrowRight className="ml-2 h-4 w-4" />
+          Check Availability
+          <ArrowRight className="ml-2 w-5 h-5" />
         </Link>
       </div>
     </div>

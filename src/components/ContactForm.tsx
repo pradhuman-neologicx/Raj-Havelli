@@ -87,7 +87,7 @@ export default function ContactForm() {
               name="firstName"
               required
               className="w-full bg-background border border-border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
-              placeholder="John"
+              placeholder="Enter Your Name"
             />
           </div>
           <div className="space-y-2">
@@ -98,7 +98,7 @@ export default function ContactForm() {
               name="lastName"
               required
               className="w-full bg-background border border-border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
-              placeholder="Doe"
+              placeholder="Enter Your Last Name"
             />
           </div>
         </div>
@@ -111,7 +111,7 @@ export default function ContactForm() {
             name="email"
             required
             className="w-full bg-background border border-border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow"
-            placeholder="john@example.com"
+            placeholder="Enter Your Email"
           />
         </div>
 

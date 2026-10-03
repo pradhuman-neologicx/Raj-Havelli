@@ -86,8 +86,6 @@ const amenityCategories = [
       { name: "Concierge", icon: ConciergeBell },
       { name: "Multilingual Staff", icon: Languages },
       { name: "Luggage Assistance", icon: Luggage },
-      { name: "Doctor on Call", icon: Stethoscope },
-      { name: "Wheelchair Accessible", icon: Accessibility },
       { name: "Laundry Service", icon: ShirtIcon },
       { name: "Newspaper", icon: Newspaper },
       { name: "Parking", icon: ParkingCircle },
@@ -106,7 +104,6 @@ const amenityCategories = [
       { name: "Terrace", icon: Lamp },
       { name: "Free Toiletries", icon: Bath },
       { name: "Work Desk", icon: Presentation },
-      { name: "Tea & Coffee Maker", icon: Coffee },
       { name: "Minibar", icon: IceCreamCone },
     ],
   },
@@ -117,7 +114,6 @@ const amenityCategories = [
       { name: "Multi-Cuisine Restaurant", icon: Utensils },
       { name: "Outdoor Dining Area", icon: Armchair },
       { name: "Electric Kettle", icon: Coffee },
-      { name: "Cookware & Utensils", icon: CookingPot },
       { name: "Buffet Breakfast", icon: Utensils },
       { name: "Room Service", icon: ConciergeBell },
     ],
@@ -143,14 +139,6 @@ const amenityCategories = [
     ],
   },
   {
-    title: "Payment & Transfers",
-    icon: CreditCard,
-    items: [
-      { name: "Currency Exchange", icon: CreditCard },
-      { name: "Airport Transfers", icon: Plane },
-    ],
-  },
-  {
     title: "Media & Entertainment",
     icon: Tv,
     items: [
@@ -162,8 +150,8 @@ const amenityCategories = [
 ];
 
 const goodToKnow = [
-  { label: "Check-in", value: "12:00 PM – 11:59 PM" },
-  { label: "Check-out", value: "Until 12:00 PM" },
+  { label: "Check-in", value: "2:00 PM" },
+  { label: "Check-out", value: "12:00 PM" },
   {
     label: "Extra Beds",
     value:

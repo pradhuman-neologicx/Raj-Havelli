@@ -123,7 +123,7 @@ export default function Footer() {
               <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
               <Link href="https://neologicx.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 pl-2 md:border-l md:border-primary-foreground/20 md:pl-6 hover:text-white hover:opacity-90 transition-all">
                 <span>Powered By:</span>
-                <Image src="/neo_logo.png" alt="Powered By" width={80} height={24} className="h-6 w-auto object-contain" />
+                <Image src="/neo_logo.png" alt="Powered By" width={80} height={24} className="object-contain" />
               </Link>
             </div>
           </div>
