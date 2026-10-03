@@ -34,7 +34,7 @@ export default function DiningPage() {
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="order-2 lg:order-1">
-              <p className="text-secondary tracking-[0.2em] uppercase text-xs font-semibold mb-4">
+              <p className="text-primary/70 tracking-[0.2em] uppercase text-xs font-bold mb-4">
                 Signature Restaurant
               </p>
               <h2 className="font-serif text-3xl md:text-5xl text-primary mb-6">
@@ -114,7 +114,7 @@ export default function DiningPage() {
             </div>
 
             <div>
-              <p className="text-secondary tracking-[0.2em] uppercase text-xs font-semibold mb-4">
+              <p className="text-primary/70 tracking-[0.2em] uppercase text-xs font-bold mb-4">
                 Open-Air Experience
               </p>
               <h2 className="font-serif text-3xl md:text-5xl text-primary mb-6">
