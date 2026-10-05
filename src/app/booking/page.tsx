@@ -86,7 +86,7 @@ export default function BookingPage() {
                 <h3 className="font-serif text-xl text-foreground mb-4">Booking Policies</h3>
                 <ul className="space-y-3">
                   {[
-                    "Check-in time is 12:00 PM.",
+                    "Check-in time is 2:00 PM.",
                     "Check-out time is 12:00 PM.",
                     "Free cancellation up to 48 hours before check-in.",
                     "Valid ID required for all guests at check-in.",
