@@ -69,12 +69,12 @@ const facilities = [
 
 
 const nearbyLandmarks = [
-  { name: "Junagarh Fort", distance: "10 min drive" },
-  { name: "Prachina Museum", distance: "2.4 km" },
-  { name: "Rampuria Havelis", distance: "2.9 km" },
-  { name: "Bhanda Shaha Jain Temple", distance: "15 min ride" },
-  { name: "Brahaman Path", distance: "750 metres" },
-  { name: "Milan Travels Bus Stop", distance: "5 min walk" },
+  { name: "Junagarh Fort", distance: "2.9 km" },
+  { name: "Prachina Museum", distance: "2.9 km" },
+  { name: "Rampuria Havelis", distance: "3.9 km" },
+  { name: "Bhanda Shaha Jain Temple", distance: "4.3 km" },
+  { name: "Brahaman Path", distance: "900 meters" },
+  { name: "Milan Travels Bus Stop", distance: "4 km" },
 ];
 
 /* ------------------------------------------------------------------ */
