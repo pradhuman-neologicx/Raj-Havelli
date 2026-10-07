@@ -29,7 +29,7 @@ export default function Footer() {
                 alt={hotelDetails.name}
                 width={320}
                 height={150}
-                className="object-contain h-20 w-auto mb-2 invert brightness-0 opacity-90"
+                className="object-contain h-30 w-auto mb-2 invert brightness-0 opacity-90"
               />
               <p className="text-primary-foreground/80 max-w-xs">
                 Experience the pinnacle of Indian luxury, where heritage meets modern elegance.
