@@ -228,7 +228,7 @@ export default function MenuList() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <PageHeader
-        title="Our Menu"
+        title="Raj Haveli Heritage Hotel - Menu"
         description="Savor authentic royal delicacies, tandoori specialties, and chef-curated dishes."
         image="/images/restaurant_bg.png"
         showLogo={true}
@@ -435,6 +435,7 @@ export default function MenuList() {
               height={150}
               className="object-contain h-24 md:h-28 w-auto mb-2 invert brightness-0 opacity-90"
             />
+            <h2 className="text-2xl font-serif font-bold text-white">Raj Haveli Heritage Hotel</h2>
             <p className="text-primary-foreground/80 max-w-sm text-sm md:text-base leading-relaxed">
               Experience the pinnacle of Indian luxury, where heritage meets modern elegance.
             </p>
