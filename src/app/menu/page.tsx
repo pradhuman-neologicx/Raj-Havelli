@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Phone, Search, X } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 
 // "*" at the start of an item = non-veg. Format: "name|price|description"
 type Group = [string, string[]];
@@ -84,143 +86,325 @@ const MENU: Section[] = [
 "Cold Drink|50","Mineral Water|80","Jugal Bandi (Gulab Jamun with Ice-cream)|160","Ice-cream (1 cup)|100"]]]]
 ];
 
-const CSS = `
-.rh{--bg:#f5e4c8;--card:#faefd9;--gold:#a8610a;--line:#d9b777;--ink:#3a2a1a;--mute:#7a6650;--red:#8c2f1b;--green:#2e7d32}
-.rh *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:112px}
-.rh{margin:0;background:var(--bg);color:var(--ink);font:17px/1.4 Georgia,'Times New Roman',serif}
-.rh header{text-align:center;padding:34px 16px 18px}
-.rh h1{margin:0;font:600 34px/1.1 Georgia,'Times New Roman',serif;letter-spacing:.14em;color:var(--gold)}
-.rh header p{margin:6px 0 0;letter-spacing:.3em;color:var(--mute);font-size:13px}
-.rh header a{display:inline-block;margin-top:12px;color:var(--red);font-size:14px;text-decoration:none}
-.rh nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 12px 8px}
-.rh .tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
-.rh .tabs::-webkit-scrollbar{display:none}
-.rh .tabs a{flex:none;padding:6px 14px;border:1px solid var(--line);border-radius:20px;color:var(--gold);text-decoration:none;font-size:15px;background:var(--card)}
-.rh .tabs a.on{background:var(--gold);color:#fff;border-color:var(--gold)}
-.rh .f{display:flex;gap:14px;font-size:14px;color:var(--mute);align-items:center}
-.rh .f label{display:flex;gap:6px;align-items:center}
-.rh main{max-width:640px;margin:0 auto;padding:6px 14px 40px}
-.rh section{margin-top:26px}
-.rh h2{margin:0 0 4px;text-align:center;font:500 28px Georgia,'Times New Roman',serif;color:var(--gold);letter-spacing:.06em}
-.rh h2::after{content:"";display:block;width:90px;height:1px;background:var(--gold);margin:6px auto 14px}
-.rh h3{margin:18px 0 6px;font:600 19px Georgia,'Times New Roman',serif;color:var(--ink)}
-.rh .i{display:flex;gap:10px;padding:9px 0;border-bottom:1px dotted var(--line)}
-.rh .d{flex:none;width:12px;height:12px;border:1.5px solid var(--green);margin-top:5px;position:relative}
-.rh .d::after{content:"";position:absolute;inset:2px;border-radius:50%;background:var(--green)}
-.rh .d.n{border-color:var(--red)}
-.rh .d.n::after{background:var(--red)}
-.rh .t{flex:1}
-.rh .t small{display:block;color:var(--mute);font-size:13px;line-height:1.3;margin-top:2px}
-.rh .p{flex:none;font-weight:500;color:var(--red);white-space:nowrap}
-.rh .i.h{display:none}
-.rh footer{text-align:center;color:var(--mute);font-size:13px;padding:0 16px 40px}
-.rh footer a{color:var(--red)}
-.rh{min-height:100vh;background:var(--bg);color:var(--ink);font:17px/1.4 Georgia,'Times New Roman',serif}
-.rh section{scroll-margin-top:112px}
-`;
+// Height of your sticky navbar. Change these if the tab bar overlaps or leaves a gap.
+const STICKY_TOP = "top-16 md:top-20";
 
-export default function MenuPage() {
-  const [vegOnly, setVegOnly] = useState(false);
+type Filter = "all" | "veg" | "nonveg";
+
+function highlightMatch(text: string, query: string) {
+  const q = query.trim();
+  if (!q) return text;
+  const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const regex = new RegExp(`(${escaped})`, "gi");
+  const parts = text.split(regex);
+  return parts.map((part, i) =>
+    regex.test(part) ? (
+      <mark key={i} className="bg-primary/20 text-primary font-semibold rounded px-0.5">
+        {part}
+      </mark>
+    ) : (
+      part
+    )
+  );
+}
+
+export default function MenuList() {
+  const [filter, setFilter] = useState<Filter>("all");
+  const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
+  const isClickScrolling = useRef(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Apply veg/non-veg filter + search, including category title & group label matches
+  const sections = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return MENU.map(([title, groups], index) => {
+      const titleMatches = Boolean(q && title.toLowerCase().includes(q));
+      return {
+        title,
+        index,
+        groups: groups
+          .map(([label, items]) => {
+            const labelMatches = Boolean(q && label.toLowerCase().includes(q));
+            return {
+              label,
+              items: items
+                .map((r) => {
+                  const nonVeg = r.startsWith("*");
+                  const [name, price, desc] = (nonVeg ? r.slice(1) : r).split("|");
+                  return { name, price, desc, nonVeg };
+                })
+                .filter((i) => {
+                  if (filter === "veg" && i.nonVeg) return false;
+                  if (filter === "nonveg" && !i.nonVeg) return false;
+                  if (!q) return true;
+                  if (titleMatches || labelMatches) return true;
+                  const text = (i.name + " " + (i.desc ?? "")).toLowerCase();
+                  return text.includes(q);
+                }),
+            };
+          })
+          .filter((g) => g.items.length > 0),
+      };
+    }).filter((s) => s.groups.length > 0);
+  }, [filter, query]);
+
+  const totalDishes = useMemo(() => {
+    return sections.reduce((acc, s) => {
+      return acc + s.groups.reduce((gAcc, g) => gAcc + g.items.length, 0);
+    }, 0);
+  }, [sections]);
+
+  // Keep active index valid when search/filter narrows down sections
+  useEffect(() => {
+    if (sections.length > 0) {
+      const exists = sections.some((s) => s.index === active);
+      if (!exists) {
+        setActive(sections[0].index);
+      }
+    }
+  }, [sections, active]);
 
   useEffect(() => {
-    document.documentElement.style.scrollBehavior = "smooth";
     const onScroll = () => {
-      const y = window.scrollY + 130;
-      let c = 0;
-      MENU.forEach((_, i) => {
-        const el = document.getElementById("s" + i);
-        if (el && el.offsetTop <= y) c = i;
-      });
-      setActive(c);
+      if (isClickScrolling.current) return;
+      if (!sections.length) return;
+
+      const stickyBar = document.getElementById("menu-sticky-bar");
+      const stickyBottom = stickyBar ? stickyBar.getBoundingClientRect().bottom : 190;
+      const threshold = stickyBottom + 60;
+
+      let current = sections[0].index;
+      for (const s of sections) {
+        const el = document.getElementById("menu-" + s.index);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= threshold && rect.bottom > stickyBottom) {
+            current = s.index;
+          }
+        }
+      }
+      setActive(current);
     };
-    onScroll();
+
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
-      document.documentElement.style.scrollBehavior = "";
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     };
-  }, []);
+  }, [sections]);
 
   useEffect(() => {
-    document.getElementById("tab" + active)?.scrollIntoView({
-      inline: "center",
-      block: "nearest",
-    });
+    const tabEl = document.getElementById("menu-tab-" + active);
+    if (tabEl) {
+      tabEl.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+    }
   }, [active]);
 
-  const sections = useMemo(
-    () =>
-      MENU.map(([title, groups]) => ({
-        title,
-        groups: groups.map(([label, items]) => ({
-          label,
-          items: items
-            .map((r) => {
-              const nonVeg = r.startsWith("*");
-              const [name, price, desc] = (nonVeg ? r.slice(1) : r).split("|");
-              return { name, price, desc, nonVeg };
-            })
-            .filter((i) => !(vegOnly && i.nonVeg)),
-        })),
-      })),
-    [vegOnly]
-  );
+  const goTo = (i: number) => {
+    setActive(i);
+    isClickScrolling.current = true;
+    if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+
+    const el = document.getElementById("menu-" + i);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    scrollTimeoutRef.current = setTimeout(() => {
+      isClickScrolling.current = false;
+    }, 900);
+  };
+
+  const filters: { key: Filter; label: string; dot?: "veg" | "nonveg" }[] = [
+    { key: "all", label: "All" },
+    { key: "veg", label: "Veg", dot: "veg" },
+    { key: "nonveg", label: "Non-veg", dot: "nonveg" },
+  ];
 
   return (
-    <div className="rh">
-      <style>{CSS}</style>
-      <header>
-        <h1>RAJ HAVELI</h1>
-        <p>HERITAGE</p>
-        <a href="tel:+911512208777">Call: 01512208777 / 01512208666</a>
-      </header>
+    <div className="flex flex-col min-h-screen bg-background">
+      <PageHeader
+        title="Our Menu"
+        description="Savor authentic royal delicacies, tandoori specialties, and chef-curated dishes."
+        image="/images/restaurant_bg.png"
+      />
 
-      <nav>
-        <div className="tabs">
-          {MENU.map(([title], i) => (
-            <a key={title} id={"tab" + i} href={"#s" + i} className={i === active ? "on" : ""}>
-              {title}
-            </a>
+      {/* Sticky bar: search, veg/non-veg filter, and category tabs */}
+      <div
+        id="menu-sticky-bar"
+        className={`sticky ${STICKY_TOP} z-30 bg-background/95 backdrop-blur border-b border-border shadow-xs`}
+      >
+        <div className="container mx-auto max-w-7xl px-4 md:px-6 py-3 space-y-2.5">
+          {/* Row 1: Search & Dietary Filter */}
+          <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center">
+            <div className="relative flex-1">
+              <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-primary/70 pointer-events-none" />
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") setQuery("");
+                }}
+                placeholder="Search dishes or cuisines (e.g. paneer, tandoori, biryani)..."
+                aria-label="Search dishes"
+                className="h-10 md:h-11 w-full rounded-full border border-border/80 bg-background pl-10 pr-10 text-sm text-foreground shadow-xs placeholder:text-muted-foreground/70 transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              />
+              {query && (
+                <button
+                  onClick={() => setQuery("")}
+                  aria-label="Clear search"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+
+            <div
+              className="flex shrink-0 items-center overflow-hidden rounded-full border border-border/80 bg-muted/40 p-1"
+              role="group"
+              aria-label="Filter by dietary preference"
+            >
+              {filters.map((f) => (
+                <button
+                  key={f.key}
+                  onClick={() => setFilter(f.key)}
+                  aria-pressed={filter === f.key}
+                  className={
+                    "flex items-center justify-center gap-1.5 px-3 md:px-4 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all " +
+                    (filter === f.key
+                      ? "bg-primary text-primary-foreground shadow-xs"
+                      : "text-muted-foreground hover:text-foreground hover:bg-background/60")
+                  }
+                >
+                  {f.dot && <Dot nonVeg={f.dot === "nonveg"} light={filter === f.key} />}
+                  <span>{f.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2: Category Tabs Strip */}
+          <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-smooth">
+            {sections.map((s) => {
+              const itemCount = s.groups.reduce((sum, g) => sum + g.items.length, 0);
+              const isSelected = s.index === active;
+              return (
+                <button
+                  key={s.title}
+                  id={"menu-tab-" + s.index}
+                  onClick={() => goTo(s.index)}
+                  className={
+                    "shrink-0 rounded-full border px-4 py-1.5 text-xs md:text-sm font-medium transition-all duration-200 " +
+                    (isSelected
+                      ? "bg-primary text-primary-foreground border-primary shadow-xs scale-[1.02]"
+                      : "border-border/80 bg-card text-foreground/80 hover:bg-muted hover:text-foreground")
+                  }
+                >
+                  <span>{s.title}</span>
+                  {query.trim() && (
+                    <span
+                      className={`ml-1.5 text-xs px-1.5 py-0.5 rounded-full font-normal ${
+                        isSelected ? "bg-white/20 text-white" : "bg-muted text-muted-foreground"
+                      }`}
+                    >
+                      {itemCount}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Search Result Feedback Bar */}
+          {query.trim() && (
+            <div className="flex items-center justify-between pt-1 text-xs text-muted-foreground">
+              <span>
+                Found <strong className="text-primary font-semibold">{totalDishes}</strong> {totalDishes === 1 ? "dish" : "dishes"} matching &ldquo;{query}&rdquo;
+              </span>
+              <button
+                onClick={() => setQuery("")}
+                className="text-primary hover:underline font-medium cursor-pointer"
+              >
+                Clear search
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Menu sections */}
+      <div className="px-4 md:px-6 py-12 md:py-16">
+        <div className="container mx-auto max-w-4xl space-y-16">
+          {sections.length === 0 && (
+            <div className="py-16 text-center text-muted-foreground">
+              <p className="font-serif text-xl text-primary mb-2">No dishes found</p>
+              <p className="text-sm">
+                No items matched &ldquo;{query}&rdquo; with the selected {filter !== "all" ? `${filter} ` : ""}filter.
+              </p>
+              <button
+                onClick={() => { setQuery(""); setFilter("all"); }}
+                className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm text-primary-foreground hover:bg-primary/90 transition-colors shadow-xs"
+              >
+                Reset search & filter
+              </button>
+            </div>
+          )}
+
+          {sections.map((s) => (
+            <section key={s.title} id={"menu-" + s.index} className="scroll-mt-52 md:scroll-mt-48">
+              <h2 className="font-serif text-3xl md:text-4xl text-primary text-center mb-2">{s.title}</h2>
+              <div className="mx-auto mb-8 h-px w-20 bg-primary/30" />
+              {s.groups.map((g, gi) => (
+                <div key={gi} className="mb-8 last:mb-0">
+                  {g.label && <h3 className="font-serif text-xl text-primary mb-3">{g.label}</h3>}
+                  <ul className="grid md:grid-cols-2 md:gap-x-12">
+                    {g.items.map((it) => (
+                      <li key={it.name} className="flex gap-3 py-3 border-b border-border">
+                        <Dot nonVeg={it.nonVeg} className="mt-1.5" />
+                        <div className="flex-1">
+                          <p className="text-foreground font-medium">
+                            {highlightMatch(it.name, query)}
+                          </p>
+                          {it.desc && (
+                            <p className="text-sm text-muted-foreground mt-0.5">
+                              {highlightMatch(it.desc, query)}
+                            </p>
+                          )}
+                        </div>
+                        <span className="font-medium text-primary whitespace-nowrap">₹{it.price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </section>
           ))}
-        </div>
-        <div className="f">
-          <label>
-            <input type="checkbox" checked={vegOnly} onChange={(e) => setVegOnly(e.target.checked)} /> Veg only
-          </label>
-          <span>All prices + GST</span>
-        </div>
-      </nav>
 
-      <main>
-        {sections.map((s, k) => (
-          <section key={s.title} id={"s" + k}>
-            <h2>{s.title}</h2>
-            {s.groups.map((g, gi) => (
-              <div key={gi}>
-                {g.label && g.items.length > 0 && <h3>{g.label}</h3>}
-                {g.items.map((it) => (
-                  <div className="i" key={it.name}>
-                    <span className={"d" + (it.nonVeg ? " n" : "")} />
-                    <div className="t">
-                      {it.name}
-                      {it.desc && <small>{it.desc}</small>}
-                    </div>
-                    <div className="p">₹{it.price}</div>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </section>
-        ))}
-      </main>
-
-      <footer>
-        Additional GST applicable.
-        <br />
-        Tel: <a href="tel:+911512208777">+91 1512208777</a>, <a href="tel:+911512208666">1512208666</a>
-      </footer>
+          <div className="rounded-xl border border-border bg-muted/30 p-5 text-center text-sm text-muted-foreground">
+            <p>All prices are exclusive of GST.</p>
+            <p className="mt-2 flex items-center justify-center gap-2">
+              <Phone className="h-4 w-4 text-primary" />
+              <a href="tel:+911512208777" className="text-primary hover:underline">01512208777</a>
+              <span>/</span>
+              <a href="tel:+911512208666" className="text-primary hover:underline">01512208666</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  );
+}
+
+function Dot({ nonVeg = false, light = false, className = "" }: { nonVeg?: boolean; light?: boolean; className?: string }) {
+  // On the selected (dark) filter button the dot gets a white ring so it stays visible
+  const c = nonVeg ? "border-destructive" : "border-green-700";
+  const d = nonVeg ? "bg-destructive" : "bg-green-700";
+  return (
+    <span className={`inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center border-[1.5px] ${light ? "bg-white" : ""} ${c} ${className}`}>
+      <span className={`h-1.5 w-1.5 rounded-full ${d}`} />
+    </span>
   );
 }
