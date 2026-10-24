@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { Phone, Search, X } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
+import { hotelDetails } from "@/data";
 
 // "*" at the start of an item = non-veg. Format: "name|price|description"
 type Group = [string, string[]];
@@ -86,8 +89,8 @@ const MENU: Section[] = [
 "Cold Drink|50","Mineral Water|80","Jugal Bandi (Gulab Jamun with Ice-cream)|160","Ice-cream (1 cup)|100"]]]]
 ];
 
-// Height of your sticky navbar. Change these if the tab bar overlaps or leaves a gap.
-const STICKY_TOP = "top-16 md:top-20";
+// Height of sticky bar (top-0 because global navbar is hidden on menu page)
+const STICKY_TOP = "top-0";
 
 type Filter = "all" | "veg" | "nonveg";
 
@@ -228,38 +231,50 @@ export default function MenuList() {
         title="Our Menu"
         description="Savor authentic royal delicacies, tandoori specialties, and chef-curated dishes."
         image="/images/restaurant_bg.png"
+        showLogo={true}
       />
 
-      {/* Sticky bar: search, veg/non-veg filter, and category tabs */}
+      {/* Sticky bar: logo, search, veg/non-veg filter, and category tabs */}
       <div
         id="menu-sticky-bar"
         className={`sticky ${STICKY_TOP} z-30 bg-background/95 backdrop-blur border-b border-border shadow-xs`}
       >
         <div className="container mx-auto max-w-7xl px-4 md:px-6 py-3 space-y-2.5">
-          {/* Row 1: Search & Dietary Filter */}
+          {/* Row 1: Logo, Search & Dietary Filter */}
           <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center">
-            <div className="relative flex-1">
-              <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-primary/70 pointer-events-none" />
-              <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Escape") setQuery("");
-                }}
-                placeholder="Search dishes or cuisines (e.g. paneer, tandoori, biryani)..."
-                aria-label="Search dishes"
-                className="h-10 md:h-11 w-full rounded-full border border-border/80 bg-background pl-10 pr-10 text-sm text-foreground shadow-xs placeholder:text-muted-foreground/70 transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-              />
-              {query && (
-                <button
-                  onClick={() => setQuery("")}
-                  aria-label="Clear search"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              )}
+            <div className="flex items-center gap-3 flex-1">
+              <Link href="/" className="shrink-0 flex items-center transition-opacity hover:opacity-80" aria-label="Home">
+                <Image
+                  src="/logo.png"
+                  alt={hotelDetails.name}
+                  width={140}
+                  height={48}
+                  className="h-8 md:h-9 w-auto object-contain"
+                />
+              </Link>
+              <div className="relative flex-1">
+                <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-primary/70 pointer-events-none" />
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") setQuery("");
+                  }}
+                  placeholder="Search dishes or cuisines (e.g. paneer, tandoori, biryani)..."
+                  aria-label="Search dishes"
+                  className="h-10 md:h-11 w-full rounded-full border border-border/80 bg-background pl-10 pr-10 text-sm text-foreground shadow-xs placeholder:text-muted-foreground/70 transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                />
+                {query && (
+                  <button
+                    onClick={() => setQuery("")}
+                    aria-label="Clear search"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
             </div>
 
             <div
@@ -354,7 +369,7 @@ export default function MenuList() {
           )}
 
           {sections.map((s) => (
-            <section key={s.title} id={"menu-" + s.index} className="scroll-mt-52 md:scroll-mt-48">
+            <section key={s.title} id={"menu-" + s.index} className="scroll-mt-32 md:scroll-mt-28">
               <h2 className="font-serif text-3xl md:text-4xl text-primary text-center mb-2">{s.title}</h2>
               <div className="mx-auto mb-8 h-px w-20 bg-primary/30" />
               {s.groups.map((g, gi) => (
@@ -394,6 +409,57 @@ export default function MenuList() {
           </div>
         </div>
       </div>
+
+      {/* Wave SVG Divider */}
+      <div className="w-full overflow-hidden leading-none flex -mb-1 mt-12">
+        <Image
+          src="/wave.svg"
+          alt=""
+          width={1920}
+          height={120}
+          className="w-full h-auto block rotate-180"
+          priority
+        />
+      </div>
+      <style>{`.elementor-shape-fill { fill: #031b18; }`}</style>
+
+      {/* Minimal Brand Footer */}
+      <footer className="bg-[#031b18] text-primary-foreground">
+        <div className="container mx-auto px-4 md:px-6 py-12 flex flex-col items-center text-center">
+          {/* Brand */}
+          <div className="space-y-4 flex flex-col items-center">
+            <Image
+              src="/logo.png"
+              alt={hotelDetails.name}
+              width={320}
+              height={150}
+              className="object-contain h-24 md:h-28 w-auto mb-2 invert brightness-0 opacity-90"
+            />
+            <p className="text-primary-foreground/80 max-w-sm text-sm md:text-base leading-relaxed">
+              Experience the pinnacle of Indian luxury, where heritage meets modern elegance.
+            </p>
+            <div className="flex space-x-4 pt-2 justify-center">
+              <Link href="#" className="hover:text-secondary transition-colors" aria-label="Instagram">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </Link>
+              <Link href="#" className="hover:text-secondary transition-colors" aria-label="Facebook">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </Link>
+              <Link href="#" className="hover:text-secondary transition-colors" aria-label="Twitter">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
