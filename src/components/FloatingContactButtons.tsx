@@ -1,9 +1,16 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone, MessageCircle, Mail, CalendarCheck } from "lucide-react";
 
 export default function FloatingContactButtons() {
+  const pathname = usePathname();
+
+  if (pathname === "/menu" || pathname?.startsWith("/menu")) {
+    return null;
+  }
+
   return (
     <div className="flex fixed right-2 sm:right-4 md:right-6 bottom-10 sm:bottom-12 md:bottom-16 flex-col gap-2 sm:gap-3 md:gap-4 z-50">
       {/* <Link href="tel:+919876543210" className="group flex items-center justify-end">
