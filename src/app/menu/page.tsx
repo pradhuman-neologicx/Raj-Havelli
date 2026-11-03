@@ -3,8 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Search, X } from "lucide-react";
-import PageHeader from "@/components/PageHeader";
+import { MoreVertical, Phone, Search, X } from "lucide-react";
 import { hotelDetails } from "@/data";
 
 // "*" at the start of an item = non-veg. Format: "name|price|description"
@@ -921,6 +920,7 @@ export default function MenuList() {
   const [filter, setFilter] = useState<Filter>("all");
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isClickScrolling = useRef(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -1027,12 +1027,111 @@ export default function MenuList() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <PageHeader
-        title="Raj Haveli Heritage Hotel - Menu"
-        description="Savor authentic royal delicacies, tandoori specialties, and chef-curated dishes."
-        image="/images/restaurant_bg.png"
-        showLogo={true}
-      />
+      {/* Top Brand Header Bar */}
+      <header className="bg-background border-b border-border/70 py-3.5 px-4 md:px-8">
+        <div className="container mx-auto max-w-7xl grid grid-cols-3 items-center">
+          {/* Left: Brand Logo */}
+          <div className="flex items-center justify-start">
+            <Image
+              src="/logo.png"
+              alt="Raj Haveli"
+              width={160}
+              height={56}
+              className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+              priority
+            />
+          </div>
+
+          {/* Middle: Brand Name & Subtitle (Centered) */}
+          <div className="text-center px-1">
+            <h1 className="text-sm sm:text-base md:text-lg font-bold tracking-wider text-foreground uppercase font-sans">
+              Raj Haveli
+            </h1>
+            <p className="text-[11px] sm:text-xs md:text-sm text-muted-foreground font-medium whitespace-nowrap">
+              Heritage Restaurant Menu
+            </p>
+          </div>
+
+          {/* Right: 3-dots action button & dropdown */}
+          <div className="flex items-center justify-end">
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+                aria-label="More contact options"
+                aria-expanded={isMenuOpen}
+                className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-muted/60 hover:bg-muted text-muted-foreground hover:text-foreground flex items-center justify-center transition-all cursor-pointer shadow-xs focus:outline-none focus:ring-2 focus:ring-primary/20"
+              >
+                <MoreVertical className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
+              </button>
+
+              {/* Popup dropdown with Mobile & Instagram icons */}
+              {isMenuOpen && (
+                <>
+                  {/* Backdrop to close on click outside */}
+                  <div
+                    className="fixed inset-0 z-40"
+                    onClick={() => setIsMenuOpen(false)}
+                  />
+                  <div className="absolute right-0 top-full mt-2.5 z-50 min-w-[190px] bg-card/95 backdrop-blur-md border border-border/80 rounded-2xl shadow-xl p-2 animate-in fade-in zoom-in-95 duration-150">
+                    <a
+                      href="tel:+911512208777"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-muted/80 transition-all text-xs sm:text-sm font-medium text-foreground group cursor-pointer"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center p-1.5 shrink-0 group-hover:scale-110 transition-transform">
+                        <Image
+                          src="/mobile.png"
+                          alt="Call"
+                          width={24}
+                          height={24}
+                          className="w-5 h-5 object-contain"
+                        />
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <span className="font-semibold text-foreground">
+                          Call Us
+                        </span>
+                        <span className="text-[11px] text-muted-foreground">
+                          0151-2208777
+                        </span>
+                      </div>
+                    </a>
+
+                    <div className="h-px bg-border/50 my-1" />
+
+                    <a
+                      href="https://www.instagram.com/hotelrajhaveli?obrf=MWNwaTYxNWJ3aWtvZQ=="
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-muted/80 transition-all text-xs sm:text-sm font-medium text-foreground group cursor-pointer"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-pink-500/10 flex items-center justify-center p-1.5 shrink-0 group-hover:scale-110 transition-transform">
+                        <Image
+                          src="/instagram.png"
+                          alt="Instagram"
+                          width={24}
+                          height={24}
+                          className="w-5 h-5 object-contain"
+                        />
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <span className="font-semibold text-foreground">
+                          Instagram
+                        </span>
+                        <span className="text-[11px] text-muted-foreground">
+                          @hotelrajhaveli
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </header>
 
       {/* Categories Grid Section: "Pick what makes you happy" */}
       <div className="bg-background border-b border-border/70 py-6 md:py-8">
@@ -1329,7 +1428,8 @@ export default function MenuList() {
             </p>
             <div className="flex space-x-4 pt-2 justify-center">
               <Link
-                href="#"
+                href="https://www.instagram.com/hotelrajhaveli?obrf=MWNwaTYxNWJ3aWtvZQ=="
+                target="_blank"
                 className="hover:text-secondary transition-colors"
                 aria-label="Instagram"
               >
@@ -1346,7 +1446,8 @@ export default function MenuList() {
                 </svg>
               </Link>
               <Link
-                href="#"
+                href="https://www.facebook.com/hotelrajhaveliheritage"
+                target="_blank"
                 className="hover:text-secondary transition-colors"
                 aria-label="Facebook"
               >
@@ -1360,7 +1461,7 @@ export default function MenuList() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </Link>
-              <Link
+              {/* <Link
                 href="#"
                 className="hover:text-secondary transition-colors"
                 aria-label="Twitter"
@@ -1374,7 +1475,7 @@ export default function MenuList() {
                 >
                   <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                 </svg>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

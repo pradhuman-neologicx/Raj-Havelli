@@ -40,26 +40,59 @@ export default function Footer() {
                 className="object-contain h-30 w-auto mb-2 invert brightness-0 opacity-90"
               />
               <p className="text-primary-foreground/80 max-w-xs">
-                Experience the pinnacle of Indian luxury, where heritage meets modern elegance.
+                Experience the pinnacle of Indian luxury, where heritage meets
+                modern elegance.
               </p>
               <div className="flex space-x-4 pt-2">
-                <Link href="#" className="hover:text-secondary transition-colors" aria-label="Instagram">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <Link
+                  href="https://www.instagram.com/hotelrajhaveli?obrf=MWNwaTYxNWJ3aWtvZQ=="
+                  target="_blank"
+                  className="hover:text-secondary transition-colors"
+                  aria-label="Instagram"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                   </svg>
                 </Link>
-                <Link href="#" className="hover:text-secondary transition-colors" aria-label="Facebook">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <Link
+                  href="https://www.facebook.com/hotelrajhaveliheritage"
+                  target="_blank"
+                  className="hover:text-secondary transition-colors"
+                  aria-label="Facebook"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 0 1 1-1h3z" />
                   </svg>
                 </Link>
-                <Link href="#" className="hover:text-secondary transition-colors" aria-label="Twitter">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                {/* <Link
+                  href="#"
+                  className="hover:text-secondary transition-colors"
+                  aria-label="Twitter"
+                >
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -82,7 +115,9 @@ export default function Footer() {
 
             {/* Amenities & Experiences */}
             <div className="space-y-4">
-              <h4 className="font-serif text-xl font-semibold">Amenities & Safari</h4>
+              <h4 className="font-serif text-xl font-semibold">
+                Amenities & Safari
+              </h4>
               <ul className="space-y-2">
                 {[
                   "Swimming Pool",
@@ -91,11 +126,13 @@ export default function Footer() {
                   "Air Conditioning",
                   "Free Wi-Fi",
                   "Camel Safari (On demand)",
-                  "Jeep Safari (On demand)"
+                  "Jeep Safari (On demand)",
                 ].map((amenity, idx) => (
                   <li key={idx} className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-secondary shrink-0" />
-                    <span className="text-primary-foreground/80">{amenity}</span>
+                    <span className="text-primary-foreground/80">
+                      {amenity}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -125,13 +162,45 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/10">
           <div className="container mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
-            <p>&copy; {currentYear} <strong><Link href="/" className="text-primary-foreground/80 hover:text-white transition-colors">{hotelDetails.name}</Link></strong>. All rights reserved.</p>
+            <p>
+              &copy; {currentYear}{" "}
+              <strong>
+                <Link
+                  href="/"
+                  className="text-primary-foreground/80 hover:text-white transition-colors"
+                >
+                  {hotelDetails.name}
+                </Link>
+              </strong>
+              . All rights reserved.
+            </p>
             <div className="flex items-center gap-6 flex-wrap justify-center md:justify-end">
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
-              <Link href="https://neologicx.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 pl-2 md:border-l md:border-primary-foreground/20 md:pl-6 hover:text-white hover:opacity-90 transition-all">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="hover:text-white transition-colors"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="https://neologicx.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 pl-2 md:border-l md:border-primary-foreground/20 md:pl-6 hover:text-white hover:opacity-90 transition-all"
+              >
                 <span>Powered By:</span>
-                <Image src="/neo_logo.png" alt="Powered By" width={80} height={24} className="object-contain" />
+                <Image
+                  src="/neo_logo.png"
+                  alt="Powered By"
+                  width={80}
+                  height={24}
+                  className="object-contain"
+                />
               </Link>
             </div>
           </div>
