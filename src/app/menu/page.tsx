@@ -1048,7 +1048,7 @@ export default function MenuList() {
               Raj Haveli
             </h1>
             <p className="text-[11px] sm:text-xs md:text-sm text-muted-foreground font-medium whitespace-nowrap">
-              Heritage Restaurant Menu
+              Restaurant Menu
             </p>
           </div>
 
