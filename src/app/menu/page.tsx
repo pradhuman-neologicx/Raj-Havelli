@@ -1028,7 +1028,7 @@ export default function MenuList() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       {/* Top Brand Header Bar */}
-      <header className="bg-background border-b border-border/70 py-3.5 px-4 md:px-8">
+      <header className="bg-background border-b border-border/70 py-2 px-4 md:px-8">
         <div className="container mx-auto max-w-7xl px-4 md:px-6 flex justify-between items-center">
           {/* Left: Brand Logo */}
           <div className="flex items-center justify-start">
@@ -1037,7 +1037,7 @@ export default function MenuList() {
               alt="Raj Haveli"
               width={160}
               height={56}
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+              className="h-14 w-auto object-contain"
               priority
             />
           </div>
