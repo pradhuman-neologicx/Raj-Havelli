@@ -1029,7 +1029,7 @@ export default function MenuList() {
     <div className="flex flex-col min-h-screen bg-background">
       {/* Top Brand Header Bar */}
       <header className="bg-background border-b border-border/70 py-3.5 px-4 md:px-8">
-        <div className="container mx-auto max-w-7xl px-4 md:px-6 grid grid-cols-3 items-center">
+        <div className="container mx-auto max-w-7xl px-4 md:px-6 flex justify-between items-center">
           {/* Left: Brand Logo */}
           <div className="flex items-center justify-start">
             <Image
@@ -1045,7 +1045,7 @@ export default function MenuList() {
           {/* Middle: Brand Name & Subtitle (Centered) */}
           <div className="text-center px-1">
             <h1 className="text-sm sm:text-base md:text-lg font-bold tracking-wider text-foreground uppercase font-sans">
-              Raj Haveli
+              Hotel Raj Haveli
             </h1>
             <p className="text-[11px] sm:text-xs md:text-sm text-muted-foreground font-medium whitespace-nowrap">
               Restaurant Menu
@@ -1394,90 +1394,44 @@ export default function MenuList() {
         </div>
       </div>
 
-      {/* Wave SVG Divider */}
-      <div className="w-full overflow-hidden leading-none flex -mb-1 mt-12">
-        <Image
-          src="/wave.svg"
-          alt=""
-          width={1920}
-          height={120}
-          className="w-full h-auto block rotate-180"
-          priority
-        />
-      </div>
-      <style>{`.elementor-shape-fill { fill: #031b18; }`}</style>
-
-      {/* Minimal Brand Footer */}
-      <footer className="bg-[#031b18] text-primary-foreground">
-        <div className="container mx-auto px-4 md:px-6 py-12 flex flex-col items-center text-center">
-          {/* Brand */}
-          <div className="space-y-4 flex flex-col items-center">
-            <Image
-              src="/logo.png"
-              alt={hotelDetails.name}
-              width={320}
-              height={150}
-              className="object-contain h-24 md:h-28 w-auto mb-2 invert brightness-0 opacity-90"
-            />
-            <h2 className="text-2xl font-serif font-bold text-white">
-              Raj Haveli Heritage Hotel
-            </h2>
-            <p className="text-primary-foreground/80 max-w-sm text-sm md:text-base leading-relaxed">
-              Experience the pinnacle of Indian luxury, where heritage meets
-              modern elegance.
-            </p>
-            <div className="flex space-x-4 pt-2 justify-center">
-              <Link
-                href="https://www.instagram.com/hotelrajhaveli?obrf=MWNwaTYxNWJ3aWtvZQ=="
-                target="_blank"
-                className="hover:text-secondary transition-colors"
-                aria-label="Instagram"
-              >
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-              </Link>
-              <Link
-                href="https://www.facebook.com/hotelrajhaveliheritage"
-                target="_blank"
-                className="hover:text-secondary transition-colors"
-                aria-label="Facebook"
-              >
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </Link>
-              {/* <Link
-                href="#"
-                className="hover:text-secondary transition-colors"
-                aria-label="Twitter"
-              >
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                </svg>
-              </Link> */}
-            </div>
-          </div>
+      {/* Simple Footer */}
+      <footer className="border-t border-border/70 bg-card py-6 px-4 md:px-6">
+        <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-muted-foreground">
+          <p>
+            © {new Date().getFullYear()} Raj Haveli Heritage Hotel. All rights
+            reserved.
+          </p>
+          {/* <div className="flex items-center gap-4">
+            <Link
+              href="https://www.instagram.com/hotelrajhaveli?obrf=MWNwaTYxNWJ3aWtvZQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors flex items-center gap-1.5"
+            >
+              <Image
+                src="/instagram.png"
+                alt="Instagram"
+                width={16}
+                height={16}
+                className="w-4 h-4 object-contain"
+              />
+              <span>Instagram</span>
+            </Link>
+            <span className="text-border">•</span>
+            <a
+              href="tel:+911512208777"
+              className="hover:text-primary transition-colors flex items-center gap-1.5"
+            >
+              <Image
+                src="/mobile.png"
+                alt="Phone"
+                width={16}
+                height={16}
+                className="w-4 h-4 object-contain"
+              />
+              <span>0151-2208777</span>
+            </a>
+          </div> */}
         </div>
       </footer>
     </div>
