@@ -1029,7 +1029,7 @@ export default function MenuList() {
     <div className="flex flex-col min-h-screen bg-background">
       {/* Top Brand Header Bar */}
       <header className="bg-background border-b border-border/70 py-3.5 px-4 md:px-8">
-        <div className="container mx-auto max-w-7xl grid grid-cols-3 items-center">
+        <div className="container mx-auto max-w-7xl px-4 md:px-6 grid grid-cols-3 items-center">
           {/* Left: Brand Logo */}
           <div className="flex items-center justify-start">
             <Image
@@ -1191,9 +1191,9 @@ export default function MenuList() {
       {/* Sticky Bar: "Menu" title, dietary filters & search bar */}
       <div
         id="menu-sticky-bar"
-        className={`sticky ${STICKY_TOP} z-30 bg-background/95 backdrop-blur-md border-b border-border shadow-xs`}
+        className={`sticky ${STICKY_TOP} z-30 bg-background/95 backdrop-blur-md border-b border-border shadow-xs `}
       >
-        <div className="container mx-auto max-w-7xl px-4 md:px-6 py-3.5 space-y-2.5">
+        <div className="container mx-auto max-w-7xl px-4 md:px-8 py-3.5 space-y-2.5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3 md:gap-4 flex-wrap">
               <h3 className="text-xl md:text-2xl font-bold tracking-tight text-foreground font-sans">
