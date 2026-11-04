@@ -342,6 +342,171 @@ const MENU: Section[] = [
   ],
 ];
 
+export interface BanquetItem {
+  name: string;
+  nonVeg?: boolean;
+  both?: boolean;
+}
+
+export interface BanquetCategory {
+  title: string;
+  note: string;
+  items: BanquetItem[];
+}
+
+export const BANQUET_MENU: BanquetCategory[] = [
+  {
+    title: "Welcome Drink",
+    note: "Choose any one",
+    items: [
+      { name: "Butter Milk" },
+      { name: "Blue Lagoon" },
+      { name: "Milk Shake" },
+      { name: "Soft Drink" },
+    ],
+  },
+  {
+    title: "Snacks (Veg.)",
+    note: "Choose any one",
+    items: [
+      { name: "Paneer Tikka" },
+      { name: "Haryali Paneer Tikka" },
+      { name: "Chilly Paneer" },
+      { name: "Hara Bhara Kebab" },
+      { name: "Aloo Adarki Tikki" },
+      { name: "Crispy Vegetable" },
+      { name: "Veg. Pakoda" },
+      { name: "Paneer Pakoda" },
+    ],
+  },
+  {
+    title: "Snacks Non Veg.",
+    note: "Choose any one",
+    items: [
+      { name: "Chicken Tikka", nonVeg: true },
+      { name: "Murg Malai Tikka", nonVeg: true },
+      { name: "Chicken Sheek Kebab", nonVeg: true },
+      { name: "Chilly Chicken", nonVeg: true },
+      { name: "Mutton Ke Sule", nonVeg: true },
+    ],
+  },
+  {
+    title: "Salad",
+    note: "Choose any one",
+    items: [
+      { name: "Green Salad" },
+      { name: "Kachumber" },
+      { name: "Three Beans Salad" },
+      { name: "Fried Idly Salad" },
+      { name: "Russian Salad" },
+    ],
+  },
+  {
+    title: "Soups",
+    note: "Choose any one",
+    items: [
+      { name: "Cream of Tomato" },
+      { name: "Cream of Veg. / Non Veg.", both: true },
+      { name: "Sweet Corn Veg. / Non Veg.", both: true },
+      { name: "Hot & Sour Veg. / Non Veg.", both: true },
+      { name: "Tomato Dhaniya ka Shorba" },
+    ],
+  },
+  {
+    title: "Paneer Ki Pasand",
+    note: "Choose any one",
+    items: [
+      { name: "Paneer Butter Masala" },
+      { name: "Kadhai Paneer" },
+      { name: "Palak Paneer" },
+      { name: "Paneer Pudina Masala" },
+      { name: "Malai Kofta" },
+      { name: "Navratan Korma" },
+    ],
+  },
+  {
+    title: "Subzi Ki Pasand",
+    note: "Choose any one",
+    items: [
+      { name: "Mix. Vegetable" },
+      { name: "Palak Baby Corn" },
+      { name: "Dum Aloo" },
+      { name: "Gobhi Masala" },
+      { name: "Aloo Pyaz Ki Subzi" },
+      { name: "Govind Gatta" },
+      { name: "Seasonal" },
+      { name: "Veg. Manchurian" },
+      { name: "Chana Masala" },
+    ],
+  },
+  {
+    title: "Non Vegetarian Pasand",
+    note: "Choose any one",
+    items: [
+      { name: "Butter Chicken", nonVeg: true },
+      { name: "Murg Bikaneri", nonVeg: true },
+      { name: "Kadhai Murg", nonVeg: true },
+      { name: "Laal Maans", nonVeg: true },
+      { name: "Mutton Rogan Josh", nonVeg: true },
+      { name: "Gosht Rarra", nonVeg: true },
+    ],
+  },
+  {
+    title: "Dal Ki Pasand",
+    note: "Choose any one",
+    items: [
+      { name: "Lasooni Dal Tikka" },
+      { name: "Dal Panchmail" },
+      { name: "Dal Makhani" },
+      { name: "Dal Palak" },
+      { name: "Kadi Pakora" },
+    ],
+  },
+  {
+    title: "Dahi Ki Pasand",
+    note: "Choose any one",
+    items: [
+      { name: "Vegetable Raita" },
+      { name: "Boondi Raita" },
+      { name: "Burani Raita" },
+      { name: "Plain Dahi" },
+      { name: "Pineapple Raita" },
+    ],
+  },
+  {
+    title: "Chawal Ki Pasand",
+    note: "Choose any one",
+    items: [
+      { name: "Steamed Rice" },
+      { name: "Jeera Rice" },
+      { name: "Vegetable Pulao" },
+      { name: "Peas Pulao" },
+      { name: "Veg. Fried Rice" },
+      { name: "Egg Fried Rice", nonVeg: true },
+    ],
+  },
+  {
+    title: "Roti Ki Pasand",
+    note: "Choose any one",
+    items: [
+      { name: "Tandoori Roti" },
+      { name: "Missi Roti" },
+      { name: "Naan" },
+    ],
+  },
+  {
+    title: "Mithai Ki Pasand",
+    note: "Choose any one",
+    items: [
+      { name: "Gulab Jamun" },
+      { name: "Rice Kheer" },
+      { name: "Carrot Rabri" },
+      { name: "Fruit Custard" },
+      { name: "Ice Cream" },
+    ],
+  },
+];
+
 // Height of sticky bar (top-0 because global navbar is hidden on menu page)
 const STICKY_TOP = "top-0";
 
@@ -897,6 +1062,37 @@ function getCategoryIcon(title: string) {
     );
   }
 
+  // Banquet Menu
+  if (t.includes("banquet")) {
+    return (
+      <svg
+        viewBox="0 0 48 48"
+        className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 shrink-0"
+        fill="none"
+        stroke="#221b18"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle
+          cx="24"
+          cy="12"
+          r="2.5"
+          fill="#ffd54f"
+          stroke="#221b18"
+          strokeWidth="1.5"
+        />
+        <path d="M10 27c0-7.7 6.3-14 14-14s14 6.3 14 14H10z" fill="#ffffff" />
+        <ellipse cx="24" cy="27" rx="14" ry="2.5" fill="#fff5ec" />
+        <line x1="6" y1="30" x2="42" y2="30" strokeWidth="2" stroke="#221b18" />
+        <path d="M8 30c0 2.5 3.5 4 16 4s16-1.5 16-4" fill="#f5f5f5" />
+        <path d="M17 20c2-2 4-2 6-1" stroke="#ffb300" strokeWidth="1.2" />
+        <circle cx="20" cy="38" r="1.5" fill="#221b18" />
+        <circle cx="28" cy="38" r="1.5" fill="#221b18" />
+      </svg>
+    );
+  }
+
   // Fallback icon
   return (
     <svg
@@ -917,7 +1113,7 @@ function getCategoryIcon(title: string) {
 export default function MenuList() {
   const [filter, setFilter] = useState<Filter>("all");
   const [query, setQuery] = useState("");
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number | string>(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isClickScrolling = useRef(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -958,26 +1154,63 @@ export default function MenuList() {
     }).filter((s) => s.groups.length > 0);
   }, [filter, query]);
 
+  // Filter banquet categories based on dietary preference & search query
+  const filteredBanquetCategories = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return BANQUET_MENU.map((cat) => {
+      const titleMatches = Boolean(q && cat.title.toLowerCase().includes(q));
+      const filteredItems = cat.items.filter((it) => {
+        if (filter === "veg" && it.nonVeg && !it.both) return false;
+        if (filter === "nonveg" && !it.nonVeg && !it.both) return false;
+        if (!q) return true;
+        if (titleMatches) return true;
+        return it.name.toLowerCase().includes(q);
+      });
+      return {
+        ...cat,
+        items: filteredItems,
+      };
+    }).filter((cat) => cat.items.length > 0);
+  }, [filter, query]);
+
   const totalDishes = useMemo(() => {
     return sections.reduce((acc, s) => {
       return acc + s.groups.reduce((gAcc, g) => gAcc + g.items.length, 0);
     }, 0);
   }, [sections]);
 
+  const totalBanquetDishes = useMemo(() => {
+    return filteredBanquetCategories.reduce(
+      (acc, cat) => acc + cat.items.length,
+      0,
+    );
+  }, [filteredBanquetCategories]);
+
+  const allDishesCount = totalDishes + totalBanquetDishes;
+
+  // Check hash on initial load
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#banquet") {
+      setTimeout(() => goTo("banquet"), 400);
+    }
+  }, []);
+
   // Keep active index valid when search/filter narrows down sections
   useEffect(() => {
+    if (active === "banquet") return;
     if (sections.length > 0) {
       const exists = sections.some((s) => s.index === active);
       if (!exists) {
         setActive(sections[0].index);
       }
+    } else if (filteredBanquetCategories.length > 0) {
+      setActive("banquet");
     }
-  }, [sections, active]);
+  }, [sections, filteredBanquetCategories, active]);
 
   useEffect(() => {
     const onScroll = () => {
       if (isClickScrolling.current) return;
-      if (!sections.length) return;
 
       const stickyBar = document.getElementById("menu-sticky-bar");
       const stickyBottom = stickyBar
@@ -985,7 +1218,25 @@ export default function MenuList() {
         : 190;
       const threshold = stickyBottom + 60;
 
-      let current = sections[0].index;
+      // Check if user has scrolled near bottom or banquet is active in viewport
+      const banquetEl = document.getElementById("menu-banquet");
+      if (banquetEl) {
+        const bRect = banquetEl.getBoundingClientRect();
+        const isAtBottom =
+          window.innerHeight + window.scrollY >=
+          document.documentElement.scrollHeight - 140;
+        if (
+          isAtBottom ||
+          (bRect.top <= threshold && bRect.bottom > stickyBottom)
+        ) {
+          setActive("banquet");
+          return;
+        }
+      }
+
+      if (!sections.length) return;
+
+      let current: number | string = sections[0].index;
       for (const s of sections) {
         const el = document.getElementById("menu-" + s.index);
         if (el) {
@@ -1005,12 +1256,13 @@ export default function MenuList() {
     };
   }, [sections]);
 
-  const goTo = (i: number) => {
+  const goTo = (i: number | string) => {
     setActive(i);
     isClickScrolling.current = true;
     if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
 
-    const el = document.getElementById("menu-" + i);
+    const targetId = i === "banquet" ? "menu-banquet" : "menu-" + i;
+    const el = document.getElementById(targetId);
     if (el) {
       const stickyBar = document.getElementById("menu-sticky-bar");
       const offset = stickyBar ? stickyBar.offsetHeight + 16 : 140;
@@ -1182,6 +1434,47 @@ export default function MenuList() {
                 </button>
               );
             })}
+
+            {/* Banquet Menu Tab */}
+            {filteredBanquetCategories.length > 0 && (
+              <button
+                key="Banquet Menu"
+                id="menu-tab-banquet"
+                onClick={() => goTo("banquet")}
+                aria-selected={active === "banquet"}
+                role="tab"
+                className="group flex flex-col items-center cursor-pointer transition-all duration-200 focus:outline-none w-full max-w-[105px]"
+              >
+                <div
+                  className={`relative w-15 h-15 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center p-2.5 transition-all duration-300 shadow-xs ${
+                    active === "banquet"
+                      ? "ring-[2.5px] ring-primary ring-offset-2 ring-offset-background shadow-md shadow-primary/30 scale-105"
+                      : "hover:scale-105 hover:shadow-xs opacity-90 hover:opacity-100"
+                  }`}
+                  style={{
+                    background:
+                      "repeating-linear-gradient(90deg, #134139 0px, #134139 3.5px, #1c5449 3.5px, #1c5449 7px)",
+                  }}
+                >
+                  {getCategoryIcon("banquet")}
+                </div>
+                <span
+                  className={`mt-2 text-[10.5px] sm:text-[11px] md:text-xs font-bold uppercase tracking-wider text-center transition-colors line-clamp-2 px-0.5 leading-tight ${
+                    active === "banquet"
+                      ? "text-primary"
+                      : "text-foreground/80 group-hover:text-foreground"
+                  }`}
+                >
+                  Banquet Menu
+                </span>
+                {/* Active theme color underline bar */}
+                <span
+                  className={`mt-1.5 h-[2.5px] w-12 sm:w-14 md:w-16 rounded-full transition-all duration-300 ${
+                    active === "banquet" ? "bg-primary" : "bg-transparent"
+                  }`}
+                />
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -1244,7 +1537,7 @@ export default function MenuList() {
                   }`}
                 >
                   <span className="inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-[2px] border border-red-600 bg-white p-[1px]">
-                    <span className="w-0 h-0 border-l-[3.5px] border-l-transparent border-r-[3.5px] border-r-transparent border-b-[5px] border-b-red-600" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-600" />
                   </span>
                   <span>Non Veg</span>
                 </button>
@@ -1284,9 +1577,10 @@ export default function MenuList() {
               <span>
                 Found{" "}
                 <strong className="text-primary font-semibold">
-                  {totalDishes}
+                  {allDishesCount}
                 </strong>{" "}
-                {totalDishes === 1 ? "dish" : "dishes"} matching &ldquo;{query}
+                {allDishesCount === 1 ? "dish" : "dishes"} matching &ldquo;
+                {query}
                 &rdquo;
               </span>
               <button
@@ -1304,7 +1598,7 @@ export default function MenuList() {
       {/* Menu sections */}
       <div className="px-4 md:px-6 py-12 md:py-16">
         <div className="container mx-auto max-w-4xl space-y-16">
-          {sections.length === 0 && (
+          {sections.length === 0 && filteredBanquetCategories.length === 0 && (
             <div className="py-16 text-center text-muted-foreground">
               <p className="font-serif text-xl text-primary mb-2">
                 No dishes found
@@ -1318,7 +1612,7 @@ export default function MenuList() {
                   setQuery("");
                   setFilter("all");
                 }}
-                className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm text-primary-foreground hover:bg-primary/90 transition-colors shadow-xs"
+                className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm text-primary-foreground hover:bg-primary/90 transition-colors shadow-xs cursor-pointer"
               >
                 Reset search & filter
               </button>
@@ -1369,6 +1663,74 @@ export default function MenuList() {
               ))}
             </section>
           ))}
+
+          {/* Banquet Menu Section */}
+          {filteredBanquetCategories.length > 0 && (
+            <section
+              id="menu-banquet"
+              className="scroll-mt-32 md:scroll-mt-28 pt-10 border-t-2 border-primary/20"
+            >
+              {/* Banquet Header */}
+              <div className="text-center mb-10">
+                <span className="inline-block px-3.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-widest mb-3">
+                  Events &amp; Celebrations
+                </span>
+                <h2 className="font-serif text-3xl md:text-4xl text-primary font-bold">
+                  Banquet Menu
+                </h2>
+                <p className="text-sm md:text-base text-muted-foreground mt-2 max-w-xl mx-auto font-medium">
+                  Lunch &amp; Dinner Banquet Menu &bull; Choose any one from
+                  each course for your custom celebration feast
+                </p>
+                <div className="mx-auto mt-4 h-0.5 w-24 bg-primary/40 rounded-full" />
+              </div>
+
+              {/* Grid of Banquet Course Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {filteredBanquetCategories.map((cat) => (
+                  <div
+                    key={cat.title}
+                    className="rounded-2xl border border-border/80 bg-card/60 backdrop-blur-xs p-5 md:p-6 shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 border-b border-border/60 pb-3 mb-4">
+                        <h3 className="font-serif text-lg md:text-xl font-bold text-primary">
+                          {highlightMatch(cat.title, query)}
+                        </h3>
+                        <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-primary/10 text-primary whitespace-nowrap">
+                          {cat.note}
+                        </span>
+                      </div>
+
+                      <ul className="space-y-2.5">
+                        {cat.items.map((it) => (
+                          <li
+                            key={it.name}
+                            className="flex items-center gap-3 py-1 text-sm text-foreground/90"
+                          >
+                            {it.both ? (
+                              <div className="flex items-center gap-1 shrink-0">
+                                <Dot nonVeg={false} />
+                                <Dot nonVeg={true} />
+                              </div>
+                            ) : (
+                              <Dot
+                                nonVeg={Boolean(it.nonVeg)}
+                                className="shrink-0"
+                              />
+                            )}
+                            <span className="font-medium">
+                              {highlightMatch(it.name, query)}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           <div className="rounded-xl border border-border bg-muted/30 p-5 text-center text-sm text-muted-foreground">
             <p>All prices are exclusive of GST.</p>
@@ -1442,7 +1804,7 @@ function Dot({
       className={`inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-[2px] border border-red-600 bg-white p-[1px] ${className}`}
       title="Non-Vegetarian"
     >
-      <span className="w-0 h-0 border-l-[3.5px] border-l-transparent border-r-[3.5px] border-r-transparent border-b-[5px] border-b-red-600" />
+      <span className="h-1.5 w-1.5 rounded-full bg-red-600" />
     </span>
   ) : (
     <span
