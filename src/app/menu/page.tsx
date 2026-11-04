@@ -334,8 +334,6 @@ const MENU: Section[] = [
           "Tea|60",
           "Lassi (Masala / Sweet)|130",
           "Sweet Lime Soda|150",
-          "Soft Drink|90",
-          "Mineral Water|80",
           "Jugal Bandi (Gulab Jamun with Ice-cream)|190",
           "Ice-cream (1 cup)|225",
         ],
@@ -1381,13 +1379,6 @@ export default function MenuList() {
                 className="text-primary hover:underline"
               >
                 01512208777
-              </a>
-              <span>/</span>
-              <a
-                href="tel:+911512208666"
-                className="text-primary hover:underline"
-              >
-                01512208666
               </a>
             </p>
           </div>
