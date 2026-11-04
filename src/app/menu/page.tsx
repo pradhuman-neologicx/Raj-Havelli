@@ -333,7 +333,6 @@ const MENU: Section[] = [
           "Hot Milk|100",
           "Tea|60",
           "Lassi (Masala / Sweet)|130",
-          "Sweet Lime Soda|150",
           "Jugal Bandi (Gulab Jamun with Ice-cream)|190",
           "Ice-cream (1 cup)|225",
         ],
