@@ -1068,26 +1068,67 @@ function getCategoryIcon(title: string) {
         viewBox="0 0 48 48"
         className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 shrink-0"
         fill="none"
-        stroke="#221b18"
+        stroke="#78350f"
         strokeWidth="1.6"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
         <circle
           cx="24"
-          cy="12"
-          r="2.5"
-          fill="#ffd54f"
-          stroke="#221b18"
+          cy="11"
+          r="2.8"
+          fill="#fbbf24"
+          stroke="#78350f"
           strokeWidth="1.5"
         />
-        <path d="M10 27c0-7.7 6.3-14 14-14s14 6.3 14 14H10z" fill="#ffffff" />
-        <ellipse cx="24" cy="27" rx="14" ry="2.5" fill="#fff5ec" />
-        <line x1="6" y1="30" x2="42" y2="30" strokeWidth="2" stroke="#221b18" />
-        <path d="M8 30c0 2.5 3.5 4 16 4s16-1.5 16-4" fill="#f5f5f5" />
-        <path d="M17 20c2-2 4-2 6-1" stroke="#ffb300" strokeWidth="1.2" />
-        <circle cx="20" cy="38" r="1.5" fill="#221b18" />
-        <circle cx="28" cy="38" r="1.5" fill="#221b18" />
+        <path
+          d="M10 27c0-7.7 6.3-14 14-14s14 6.3 14 14H10z"
+          fill="#fffdf5"
+          stroke="#78350f"
+          strokeWidth="1.6"
+        />
+        <ellipse
+          cx="24"
+          cy="27"
+          rx="14"
+          ry="2.5"
+          fill="#fef08a"
+          stroke="#78350f"
+          strokeWidth="1.3"
+        />
+        <line
+          x1="6"
+          y1="30"
+          x2="42"
+          y2="30"
+          strokeWidth="2.2"
+          stroke="#78350f"
+        />
+        <path
+          d="M8 30c0 2.5 3.5 4 16 4s16-1.5 16-4"
+          fill="#fde047"
+          stroke="#78350f"
+          strokeWidth="1.3"
+        />
+        <path
+          d="M17 20c2-2 4-2 6-1"
+          stroke="#d97706"
+          strokeWidth="1.3"
+        />
+        {/* Sparkle 1 */}
+        <path
+          d="M7 16l1 1.8 1.8 1-1.8 1-1 1.8-1-1.8-1.8-1 1.8-1z"
+          fill="#fef08a"
+          stroke="#b45309"
+          strokeWidth="0.8"
+        />
+        {/* Sparkle 2 */}
+        <path
+          d="M40 14l1 1.8 1.8 1-1.8 1-1 1.8-1-1.8-1.8-1 1.8-1z"
+          fill="#fef08a"
+          stroke="#b45309"
+          strokeWidth="0.8"
+        />
       </svg>
     );
   }
@@ -1445,23 +1486,27 @@ export default function MenuList() {
                 className="group flex flex-col items-center cursor-pointer transition-all duration-200 focus:outline-none w-full max-w-[105px]"
               >
                 <div
-                  className={`relative w-15 h-15 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center p-2.5 transition-all duration-300 shadow-xs ${
+                  className={`relative w-15 h-15 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center p-2.5 transition-all duration-300 border-2 border-amber-300/80 ${
                     active === "banquet"
-                      ? "ring-[2.5px] ring-primary ring-offset-2 ring-offset-background shadow-md shadow-primary/30 scale-105"
-                      : "hover:scale-105 hover:shadow-xs opacity-90 hover:opacity-100"
+                      ? "ring-[3px] ring-amber-500 ring-offset-2 ring-offset-background shadow-lg shadow-amber-500/40 scale-105"
+                      : "shadow-md shadow-amber-600/25 ring-2 ring-amber-500/40 hover:scale-105 hover:shadow-lg hover:shadow-amber-500/35"
                   }`}
                   style={{
                     background:
-                      "repeating-linear-gradient(90deg, #134139 0px, #134139 3.5px, #1c5449 3.5px, #1c5449 7px)",
+                      "linear-gradient(135deg, #78350f 0%, #b45309 45%, #d97706 100%)",
                   }}
                 >
+                  {/* "Events" Highlight Pill Badge */}
+                  <span className="absolute -top-1.5 -right-1 px-1.5 py-0.5 text-[8.5px] font-black uppercase tracking-wider rounded-full bg-amber-500 text-white shadow-xs border border-amber-200/60">
+                    Events
+                  </span>
                   {getCategoryIcon("banquet")}
                 </div>
                 <span
                   className={`mt-2 text-[10.5px] sm:text-[11px] md:text-xs font-bold uppercase tracking-wider text-center transition-colors line-clamp-2 px-0.5 leading-tight ${
                     active === "banquet"
-                      ? "text-primary"
-                      : "text-foreground/80 group-hover:text-foreground"
+                      ? "text-amber-600 font-extrabold"
+                      : "text-amber-700/90 group-hover:text-amber-600 font-bold"
                   }`}
                 >
                   Banquet Menu
@@ -1469,7 +1514,7 @@ export default function MenuList() {
                 {/* Active theme color underline bar */}
                 <span
                   className={`mt-1.5 h-[2.5px] w-12 sm:w-14 md:w-16 rounded-full transition-all duration-300 ${
-                    active === "banquet" ? "bg-primary" : "bg-transparent"
+                    active === "banquet" ? "bg-amber-600" : "bg-transparent"
                   }`}
                 />
               </button>
