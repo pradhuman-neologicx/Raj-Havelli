@@ -1110,11 +1110,7 @@ function getCategoryIcon(title: string) {
           stroke="#78350f"
           strokeWidth="1.3"
         />
-        <path
-          d="M17 20c2-2 4-2 6-1"
-          stroke="#d97706"
-          strokeWidth="1.3"
-        />
+        <path d="M17 20c2-2 4-2 6-1" stroke="#d97706" strokeWidth="1.3" />
         {/* Sparkle 1 */}
         <path
           d="M7 16l1 1.8 1.8 1-1.8 1-1 1.8-1-1.8-1.8-1 1.8-1z"
@@ -1496,10 +1492,6 @@ export default function MenuList() {
                       "linear-gradient(135deg, #78350f 0%, #b45309 45%, #d97706 100%)",
                   }}
                 >
-                  {/* "Events" Highlight Pill Badge */}
-                  <span className="absolute -top-1.5 -right-1 px-1.5 py-0.5 text-[8.5px] font-black uppercase tracking-wider rounded-full bg-amber-500 text-white shadow-xs border border-amber-200/60">
-                    Events
-                  </span>
                   {getCategoryIcon("banquet")}
                 </div>
                 <span
