@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { MoreVertical, Phone, Search, X } from "lucide-react";
 import { hotelDetails } from "@/data";
 
@@ -1146,7 +1147,17 @@ function getCategoryIcon(title: string) {
   );
 }
 
-export default function MenuList() {
+const IS_MENU_DOWN = true;
+
+export default function MenuPage() {
+  if (IS_MENU_DOWN) {
+    notFound();
+  }
+
+  return <MenuList />;
+}
+
+function MenuList() {
   const [filter, setFilter] = useState<Filter>("all");
   const [query, setQuery] = useState("");
   const [active, setActive] = useState<number | string>(0);
