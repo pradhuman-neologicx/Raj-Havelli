@@ -58,13 +58,13 @@ export default function NotFound() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
         >
-          <Link
+          <a
             href="/"
             className={buttonVariants({ variant: "default", size: "lg", className: "w-full sm:w-auto" })}
           >
             <Home className="mr-2 h-4 w-4" />
             Back to Home
-          </Link>
+          </a>
           <Button
             variant="outline"
             size="lg"

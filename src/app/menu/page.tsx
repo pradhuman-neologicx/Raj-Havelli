@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import NotFound from "@/app/not-found";
 import { MoreVertical, Phone, Search, X } from "lucide-react";
 import { hotelDetails } from "@/data";
 
@@ -1151,7 +1151,7 @@ const IS_MENU_DOWN = true;
 
 export default function MenuPage() {
   if (IS_MENU_DOWN) {
-    notFound();
+    return <NotFound />;
   }
 
   return <MenuList />;
