@@ -1147,7 +1147,7 @@ function getCategoryIcon(title: string) {
   );
 }
 
-const IS_MENU_DOWN = true;
+const IS_MENU_DOWN = false;
 
 export default function MenuPage() {
   if (IS_MENU_DOWN) {
